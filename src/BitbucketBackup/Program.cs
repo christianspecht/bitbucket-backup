@@ -9,6 +9,7 @@ namespace BitbucketBackup
     {
         static void Main(string[] args)
         {
+            var config = new Config();
         }
     }
 }
