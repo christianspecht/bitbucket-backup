@@ -8,6 +8,6 @@ Bitbucket Backup loads all important values (your Bitbucket username and passwor
 Before you run Bitbucket Backup the first time, you need to provide your data.
 
 An example configuration file is included. You can find it here:
-**\src\BitbucketBackup\App.config.example**
+**\\src\\BitbucketBackup\\App.config.example**
 
 You need to make a copy of this, change the name to **App.config** and edit the configuration values.
