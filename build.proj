@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Start">
+
+  <!-- Variables -->
+  <PropertyGroup>
+
+    <!-- Release Folder -->
+    <!-- To change the output folder, use the following parameter: /p:BuildDir=C:\BuildTest-->
+    <ReleaseDir>release</ReleaseDir>
+	
+    <!-- Build Folder -->
+    <OutDir>src\BitbucketBackup\bin\Release</OutDir>
+
+  </PropertyGroup>
+  
+
+  <!-- "Autostart" -->
+  <Target Name="Start">
+    <CallTarget Targets="DeleteReleaseFolder"/>
+    <CallTarget Targets="Build"/>
+    <CallTarget Targets="CopyRelease"/>
+  </Target>
+
+
+  <!-- delete and re-create build folder -->
+  <Target Name="DeleteReleaseFolder">
+    <RemoveDir Directories="$(ReleaseDir)"/>
+  </Target>
+
+
+  <!-- compile solution as release -->
+  <Target Name="Build">
+    <MSBuild Projects="src\BitbucketBackup.sln" Properties="Configuration=Release"/>
+  </Target>
+
+
+  <!-- copy files to release folder -->
+  <Target Name="CopyRelease">
+    <MakeDir Directories="$(ReleaseDir)"/>
+    <ItemGroup>
+      <ReleaseFiles
+          Include="$(OutDir)\*.*"
+          Exclude="$(OutDir)\*.pdb">
+      </ReleaseFiles>
+    </ItemGroup>
+    <Copy SourceFiles="@(ReleaseFiles)" DestinationFolder="$(ReleaseDir)"/>
+  </Target>
+
+
+</Project>
