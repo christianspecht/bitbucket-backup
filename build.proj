@@ -44,6 +44,13 @@
       </ReleaseFiles>
     </ItemGroup>
     <Copy SourceFiles="@(ReleaseFiles)" DestinationFolder="$(ReleaseDir)"/>
+	
+	<!-- rename App.config.example to app.config -->
+	<Copy 
+		SourceFiles="$(ReleaseDir)\App.config.example" 
+		DestinationFiles="$(ReleaseDir)\BitbucketBackup.exe.config"/>	
+	<Delete Files="$(ReleaseDir)\App.config.example"/>
+	
   </Target>
 
 
