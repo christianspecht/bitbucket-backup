@@ -15,7 +15,7 @@ namespace BitbucketBackup
         /// <summary>
         /// Bitbucket password
         /// </summary>
-        public string PassWord { get; private set; }
+        private string password;
 
         /// <summary>
         /// Folder on local machine where backups are saved
@@ -25,7 +25,7 @@ namespace BitbucketBackup
         public Config()
         {
             this.UserName = ConfigurationManager.AppSettings["User"];
-            this.PassWord = ConfigurationManager.AppSettings["Password"];
+            this.password = ConfigurationManager.AppSettings["Password"];
             this.BackupFolder = ConfigurationManager.AppSettings["BackupFolder"];
         }
     }
