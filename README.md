@@ -2,6 +2,10 @@
 
 Bitbucket Backup is a backup tool which backups all your [Bitbucket](https://bitbucket.org/) repositories to your local machine.
 
+## How does it work?
+
+Bitbucket Backup uses the [Bitbucket API](https://api.bitbucket.org/) to get a list of all your repositories.  
+Then, it uses [Mercurial](http://mercurial.selenic.com/) (which needs to be installed on your machine) to clone every repository into your local backup folder (or just pull the newest changes if it already **is** in your local backup folder)
 
 ## How to build
 
