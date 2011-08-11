@@ -40,7 +40,8 @@
     <ItemGroup>
       <ReleaseFiles
           Include="$(OutDir)\*.*"
-          Exclude="$(OutDir)\*.pdb">
+          Exclude="$(OutDir)\*.pdb;
+					$(OutDir)\*.xml">
       </ReleaseFiles>
     </ItemGroup>
     <Copy SourceFiles="@(ReleaseFiles)" DestinationFolder="$(ReleaseDir)"/>
