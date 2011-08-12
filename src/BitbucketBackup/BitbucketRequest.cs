@@ -15,11 +15,18 @@ namespace BitbucketBackup
         private Uri baseuri;
 
         /// <summary>
+        /// login credentials (Base64 encoded string)
+        /// </summary>
+        private string credentials;
+
+        /// <summary>
         /// Creates a new Bitbucket API request.
         /// </summary>
-        public BitbucketRequest()
+        /// <param name="Credentials">login credentials (Base64 encoded string)</param>
+        public BitbucketRequest(string Credentials)
         {
-            baseuri = new Uri("https://api.bitbucket.org/1.0/");
+            this.baseuri = new Uri("https://api.bitbucket.org/1.0/");
+            this.credentials = Credentials;
         }
 
         /// <summary>
@@ -31,6 +38,7 @@ namespace BitbucketBackup
         {
             var uri = new Uri(baseuri, requestUri);
             var request = WebRequest.Create(uri.ToString()) as HttpWebRequest;
+            request.Headers.Add("Authorization", "Basic " + this.credentials);
 
             using (var response = request.GetResponse() as HttpWebResponse)
             {
