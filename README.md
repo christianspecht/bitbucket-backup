@@ -22,3 +22,4 @@ Before you run Bitbucket Backup the first time, you need to edit **BitbucketBack
 Bitbucket Backup makes use of the following open source projects:
 
  - [Json.NET](http://json.codeplex.com/) by James Newton-King
+ - [Mercurial.Net](http://mercurialnet.codeplex.com/) by Lasse V. Karlsen

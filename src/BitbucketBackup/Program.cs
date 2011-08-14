@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 
@@ -23,9 +24,15 @@ namespace BitbucketBackup
             var json = JObject.Parse(response);
             var repos = json.SelectToken("repositories").Select(n => (string)n.SelectToken("slug")).ToList();
 
-            foreach (string repo in repos)
+            var baseUri = new Uri("https://bitbucket.org/" + config.UserName + "/");
+
+            foreach (string repoName in repos)
             {
-                Console.WriteLine(repo);
+                var repoUri = new Uri(baseUri, repoName);
+                string repoPath = Path.Combine(config.BackupFolder, repoName);                
+
+                var updater = new RepositoryUpdater(repoUri, repoPath);
+                updater.Update();
             }
 
             Console.ReadLine();
