@@ -46,6 +46,15 @@ namespace BitbucketBackup
 
                 var updater = new RepositoryUpdater(repoUri, repoPath);
                 updater.Update();
+
+                if (repo.HasWiki)
+                {
+                    var wikiUri = new Uri(baseUri, repo.RepoName + "/wiki");
+                    string wikiPath = Path.Combine(config.BackupFolder, repo.RepoName + "-wiki");
+
+                    var wikiUpdater = new RepositoryUpdater(wikiUri, wikiPath);
+                    wikiUpdater.Update();
+                }
             }
 
             Console.WriteLine();
