@@ -33,14 +33,16 @@ namespace BitbucketBackup
             Thread.Sleep(sleepTime);
 
             var json = JObject.Parse(response);
-            var repos = json.SelectToken("repositories").Select(n => (string)n.SelectToken("slug")).ToList();
+            var repos =
+                from r in json["repositories"].Children()
+                select new { RepoName = (string)r["slug"], HasWiki = (bool)r["has_wiki"] };
 
             var baseUri = new Uri("https://bitbucket.org/" + config.UserName + "/");
 
-            foreach (string repoName in repos)
+            foreach (var repo in repos)
             {
-                var repoUri = new Uri(baseUri, repoName);
-                string repoPath = Path.Combine(config.BackupFolder, repoName);                
+                var repoUri = new Uri(baseUri, repo.RepoName);
+                string repoPath = Path.Combine(config.BackupFolder, repo.RepoName);                
 
                 var updater = new RepositoryUpdater(repoUri, repoPath);
                 updater.Update();
