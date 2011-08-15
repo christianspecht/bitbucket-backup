@@ -19,6 +19,7 @@ namespace BitbucketBackup
             {
                 Console.WriteLine("Bitbucket API didn't return a response: " + resource);
                 Console.ReadLine();
+                return;
             }
 
             var json = JObject.Parse(response);
