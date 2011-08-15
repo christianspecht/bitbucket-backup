@@ -46,7 +46,9 @@ namespace BitbucketBackup
             else
             {
                 // repo already exists --> just pull
-                throw new NotImplementedException("TODO");
+                Console.WriteLine("Pulling: {0}", this.repouri);
+                var repo = new Repository(this.localfolder);
+                repo.Pull(this.repouri.ToString(), new PullCommand().WithUpdate(false));
             }
         }
     }
