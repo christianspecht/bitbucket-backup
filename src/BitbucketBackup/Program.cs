@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using Newtonsoft.Json.Linq;
 
 namespace BitbucketBackup
@@ -9,6 +10,8 @@ namespace BitbucketBackup
     {
         static void Main(string[] args)
         {
+            int sleepTime = 2000;
+
             var config = new Config();
             var request = new BitbucketRequest(config.Credentials);
 
@@ -21,6 +24,13 @@ namespace BitbucketBackup
                 Console.ReadLine();
                 return;
             }
+
+            Console.WriteLine("Bitbucket Backup");
+            Console.WriteLine();
+            Console.WriteLine("Bitbucket user: {0}", config.UserName);
+            Console.WriteLine("Local backup folder: {0}", config.BackupFolder);
+            Console.WriteLine();
+            Thread.Sleep(sleepTime);
 
             var json = JObject.Parse(response);
             var repos = json.SelectToken("repositories").Select(n => (string)n.SelectToken("slug")).ToList();
@@ -36,7 +46,9 @@ namespace BitbucketBackup
                 updater.Update();
             }
 
-            Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine("Backup completed!");
+            Thread.Sleep(sleepTime);
         }
     }
 }
