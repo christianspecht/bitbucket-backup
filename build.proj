@@ -39,12 +39,12 @@
     <MakeDir Directories="$(ReleaseDir)"/>
     <ItemGroup>
       <ReleaseFiles
-          Include="$(OutDir)\*.*"
+          Include="$(OutDir)\**\*.*"
           Exclude="$(OutDir)\*.pdb;
 					$(OutDir)\*.xml">
       </ReleaseFiles>
     </ItemGroup>
-    <Copy SourceFiles="@(ReleaseFiles)" DestinationFolder="$(ReleaseDir)"/>
+    <Copy SourceFiles="@(ReleaseFiles)" DestinationFiles="@(ReleaseFiles -> '$(ReleaseDir)\%(RecursiveDir)%(Filename)%(Extension)')"/>
 	
 	<!-- rename App.config.example to app.config -->
 	<Copy 
