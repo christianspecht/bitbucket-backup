@@ -38,7 +38,7 @@ namespace BitbucketBackup
             if (!Directory.Exists(this.localfolder))
             {
                 // repo doesn't exist in destination folder --> clone
-                Console.WriteLine("Cloning: {0}", this.repouri);
+                Console.WriteLine(Resources.Cloning, this.repouri);
                 Directory.CreateDirectory(this.localfolder);
                 var repo = new Repository(this.localfolder);
                 repo.Clone(this.repouri.ToString(), new CloneCommand().WithUpdate(false));
@@ -46,7 +46,7 @@ namespace BitbucketBackup
             else
             {
                 // repo already exists --> just pull
-                Console.WriteLine("Pulling: {0}", this.repouri);
+                Console.WriteLine(Resources.Pulling, this.repouri);
                 var repo = new Repository(this.localfolder);
                 repo.Pull(this.repouri.ToString(), new PullCommand().WithUpdate(false));
             }

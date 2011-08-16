@@ -20,15 +20,15 @@ namespace BitbucketBackup
 
             if (response == string.Empty)
             {
-                Console.WriteLine("Bitbucket API didn't return a response: " + resource);
+                Console.WriteLine(Resources.NoResponse, resource);
                 Console.ReadLine();
                 return;
             }
 
-            Console.WriteLine("Bitbucket Backup");
+            Console.WriteLine(Resources.IntroHeadline);
             Console.WriteLine();
-            Console.WriteLine("Bitbucket user: {0}", config.UserName);
-            Console.WriteLine("Local backup folder: {0}", config.BackupFolder);
+            Console.WriteLine(Resources.IntroUser, config.UserName);
+            Console.WriteLine(Resources.IntroFolder, config.BackupFolder);
             Console.WriteLine();
             Thread.Sleep(sleepTime);
 
@@ -58,7 +58,7 @@ namespace BitbucketBackup
             }
 
             Console.WriteLine();
-            Console.WriteLine("Backup completed!");
+            Console.WriteLine(Resources.BackupCompleted);
             Thread.Sleep(sleepTime);
         }
     }
