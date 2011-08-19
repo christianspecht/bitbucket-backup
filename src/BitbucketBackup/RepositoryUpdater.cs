@@ -15,19 +15,34 @@ namespace BitbucketBackup
         private Uri repouri;
 
         /// <summary>
+        /// URI to remote repository, but with authentication
+        /// </summary>
+        private Uri repouriwithauth;
+
+        /// <summary>
         /// local destination for repository clone
         /// </summary>
         private string localfolder;
+
+        /// <summary>
+        /// configuration settings
+        /// </summary>
+        private Config config;
 
         /// <summary>
         /// Creates a new RepositoryUpdater instance
         /// </summary>
         /// <param name="repoUri">URI to remote repository</param>
         /// <param name="destinationFolder">local destination for repository clone</param>
-        public RepositoryUpdater(Uri repoUri, string localFolder)
+        /// <param name="config">configuration settings</param>
+        public RepositoryUpdater(Uri repoUri, string localFolder, Config config)
         {
             this.repouri = repoUri;
             this.localfolder = localFolder;
+            this.config = config;
+
+            string uriWithAuth = repoUri.ToString().Replace("://", string.Format("://{0}:{1}@", config.UserName, config.PassWord));
+            this.repouriwithauth = new Uri(uriWithAuth);
         }
 
         /// <summary>
@@ -48,7 +63,7 @@ namespace BitbucketBackup
             }
 
             Console.WriteLine(Resources.Pulling, this.repouri);
-            repo.Pull(this.repouri.ToString(), new PullCommand().WithUpdate(false));
+            repo.Pull(this.repouriwithauth.ToString(), new PullCommand().WithUpdate(false));
         }
     }
 }
