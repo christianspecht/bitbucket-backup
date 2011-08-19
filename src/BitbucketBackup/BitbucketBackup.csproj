@@ -55,10 +55,10 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryUpdater.cs" />
-    <Compile Include="Resources.de-de.Designer.cs">
+    <Compile Include="Resources.de.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.de-de.resx</DependentUpon>
+      <DependentUpon>Resources.de.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -73,9 +73,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources.de-de.resx">
+    <EmbeddedResource Include="Resources.de.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.de-de.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources.de.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
