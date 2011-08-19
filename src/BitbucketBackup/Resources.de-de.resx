@@ -120,9 +120,6 @@
   <data name="BackupCompleted" xml:space="preserve">
     <value>Backup wurde abgeschlossen!</value>
   </data>
-  <data name="Cloning" xml:space="preserve">
-    <value>Clone: {0}</value>
-  </data>
   <data name="IntroFolder" xml:space="preserve">
     <value>Lokaler Backup-Ordner: {0}</value>
   </data>

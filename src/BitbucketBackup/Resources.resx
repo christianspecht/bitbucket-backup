@@ -120,9 +120,6 @@
   <data name="BackupCompleted" xml:space="preserve">
     <value>Backup completed!</value>
   </data>
-  <data name="Cloning" xml:space="preserve">
-    <value>Cloning: {0}</value>
-  </data>
   <data name="IntroHeadline" xml:space="preserve">
     <value>Bitbucket Backup</value>
   </data>

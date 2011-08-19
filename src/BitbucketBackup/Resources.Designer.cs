@@ -70,15 +70,6 @@ namespace BitbucketBackup {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Cloning: {0} ähnelt.
-        /// </summary>
-        internal static string Cloning {
-            get {
-                return ResourceManager.GetString("Cloning", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Local backup folder: {0} ähnelt.
         /// </summary>
         internal static string IntroFolder {
