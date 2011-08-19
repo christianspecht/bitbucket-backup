@@ -13,7 +13,7 @@ namespace BitbucketBackup
             int sleepTime = 2000;
 
             var config = new Config();
-            var request = new BitbucketRequest(config.Credentials);
+            var request = new BitbucketRequest(config);
 
             string resource = "users/" + config.UserName;
             string response = request.Execute(resource);

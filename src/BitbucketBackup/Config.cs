@@ -1,6 +1,4 @@
-﻿using System;
-using System.Configuration;
-using System.Text;
+﻿using System.Configuration;
 
 namespace BitbucketBackup
 {
@@ -12,7 +10,7 @@ namespace BitbucketBackup
         /// <summary>
         /// Bitbucket password
         /// </summary>
-        private string password;
+        public string PassWord { get; private set; }
 
         /// <summary>
         /// Bitbucket username
@@ -25,16 +23,13 @@ namespace BitbucketBackup
         public string BackupFolder { get; private set; }
 
         /// <summary>
-        /// login credentials (Base64 encoded string)
+        /// Creates a new Config object
         /// </summary>
-        public string Credentials { get; private set; }
-
         public Config()
         {
             this.UserName = ConfigurationManager.AppSettings["User"];
-            this.password = ConfigurationManager.AppSettings["Password"];
+            this.PassWord = ConfigurationManager.AppSettings["Password"];
             this.BackupFolder = ConfigurationManager.AppSettings["BackupFolder"];
-            this.Credentials = Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(this.UserName + ":" + this.password));
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.Text;
 
 namespace BitbucketBackup
 {
@@ -22,11 +23,11 @@ namespace BitbucketBackup
         /// <summary>
         /// Creates a new Bitbucket API request.
         /// </summary>
-        /// <param name="Credentials">login credentials (Base64 encoded string)</param>
-        public BitbucketRequest(string Credentials)
+        /// <param name="config">Config object (for login credentials)</param>
+        public BitbucketRequest(Config config)
         {
             this.baseuri = new Uri("https://api.bitbucket.org/1.0/");
-            this.credentials = Credentials;
+            this.credentials = Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(config.UserName + ":" + config.PassWord));
         }
 
         /// <summary>
