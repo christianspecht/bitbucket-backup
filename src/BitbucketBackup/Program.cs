@@ -31,6 +31,8 @@ namespace BitbucketBackup
                 if (response == string.Empty)
                 {
                     Console.WriteLine(Resources.NoResponse, resource);
+                    Console.WriteLine();
+                    Console.WriteLine(Resources.PressEnter);
                     Console.ReadLine();
                     return;
                 }
@@ -62,15 +64,15 @@ namespace BitbucketBackup
 
                 Console.WriteLine();
                 Console.WriteLine(Resources.BackupCompleted);
+                Thread.Sleep(sleepTime);
             }
             catch (ClientException ex)
             {
                 Console.WriteLine(Resources.ClientExceptionHeadline);
                 Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                Thread.Sleep(sleepTime);
+                Console.WriteLine();
+                Console.WriteLine(Resources.PressEnter);
+                Console.ReadLine();
             }
         }
     }

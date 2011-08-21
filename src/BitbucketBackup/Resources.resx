@@ -142,4 +142,7 @@
     <value>Couldn't load information for user: {0}
 Please check if the user name is valid!</value>
   </data>
+  <data name="PressEnter" xml:space="preserve">
+    <value>Press &lt;ENTER&gt; to quit!</value>
+  </data>
 </root>

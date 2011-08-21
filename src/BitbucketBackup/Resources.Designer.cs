@@ -125,6 +125,15 @@ namespace BitbucketBackup {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Press &lt;ENTER&gt; to quit! ähnelt.
+        /// </summary>
+        internal static string PressEnter {
+            get {
+                return ResourceManager.GetString("PressEnter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Pulling: {0} ähnelt.
         /// </summary>
         internal static string Pulling {
