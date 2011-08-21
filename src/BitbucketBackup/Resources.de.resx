@@ -120,11 +120,18 @@
   <data name="BackupCompleted" xml:space="preserve">
     <value>Backup wurde abgeschlossen!</value>
   </data>
+  <data name="ClientExceptionHeadline" xml:space="preserve">
+    <value>Backup fehlgeschlagen!</value>
+  </data>
   <data name="IntroFolder" xml:space="preserve">
     <value>Lokaler Backup-Ordner: {0}</value>
   </data>
   <data name="IntroUser" xml:space="preserve">
     <value>Bitbucket-Benutzer: {0}</value>
+  </data>
+  <data name="InvalidUsername" xml:space="preserve">
+    <value>Benutzerinfo konnte nicht geladen werden: {0}
+Bitte überprüfen Sie den Benutzernamen!</value>
   </data>
   <data name="NoResponse" xml:space="preserve">
     <value>Die Bitbucket-API hat keine Antwort zurückgegeben: {0}</value>

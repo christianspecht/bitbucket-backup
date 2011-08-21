@@ -20,6 +20,8 @@ namespace BitbucketBackup
         /// </summary>
         private string credentials;
 
+        private Config config;
+
         /// <summary>
         /// Creates a new Bitbucket API request.
         /// </summary>
@@ -28,6 +30,7 @@ namespace BitbucketBackup
         {
             this.baseuri = new Uri("https://api.bitbucket.org/1.0/");
             this.credentials = Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(config.UserName + ":" + config.PassWord));
+            this.config = config;
         }
 
         /// <summary>
@@ -41,10 +44,29 @@ namespace BitbucketBackup
             var request = WebRequest.Create(uri.ToString()) as HttpWebRequest;
             request.Headers.Add("Authorization", "Basic " + this.credentials);
 
-            using (var response = request.GetResponse() as HttpWebResponse)
+            try
             {
-                var reader = new StreamReader(response.GetResponseStream());
-                return reader.ReadToEnd();
+                using (var response = request.GetResponse() as HttpWebResponse)
+                {
+                    var reader = new StreamReader(response.GetResponseStream());
+                    return reader.ReadToEnd();
+                }
+            }
+            catch (WebException ex)
+            {
+                using (HttpWebResponse resp = (HttpWebResponse)ex.Response)
+                {
+                    if (resp.StatusCode == HttpStatusCode.NotFound)
+                    {
+                        // if the Uri returns a 404, the username probably doesn't exist
+                        // (there could be other reasons, but this one is the most likely)
+                        throw new ClientException(string.Format(Resources.InvalidUsername, config.UserName), ex);
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
             }
         }
     }

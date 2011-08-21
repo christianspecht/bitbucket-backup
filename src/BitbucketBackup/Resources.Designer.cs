@@ -70,6 +70,15 @@ namespace BitbucketBackup {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Backup failed! ähnelt.
+        /// </summary>
+        internal static string ClientExceptionHeadline {
+            get {
+                return ResourceManager.GetString("ClientExceptionHeadline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Local backup folder: {0} ähnelt.
         /// </summary>
         internal static string IntroFolder {
@@ -93,6 +102,16 @@ namespace BitbucketBackup {
         internal static string IntroUser {
             get {
                 return ResourceManager.GetString("IntroUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Couldn&apos;t load information for user: {0}
+        ///Please check if the user name is valid! ähnelt.
+        /// </summary>
+        internal static string InvalidUsername {
+            get {
+                return ResourceManager.GetString("InvalidUsername", resourceCulture);
             }
         }
         

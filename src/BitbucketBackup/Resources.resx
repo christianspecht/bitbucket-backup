@@ -135,4 +135,11 @@
   <data name="Pulling" xml:space="preserve">
     <value>Pulling: {0}</value>
   </data>
+  <data name="ClientExceptionHeadline" xml:space="preserve">
+    <value>Backup failed!</value>
+  </data>
+  <data name="InvalidUsername" xml:space="preserve">
+    <value>Couldn't load information for user: {0}
+Please check if the user name is valid!</value>
+  </data>
 </root>
