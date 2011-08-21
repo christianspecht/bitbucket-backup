@@ -15,6 +15,14 @@ namespace BitbucketBackup
             try
             {
                 var config = new Config();
+
+                Console.WriteLine(Resources.IntroHeadline);
+                Console.WriteLine();
+                Console.WriteLine(Resources.IntroUser, config.UserName);
+                Console.WriteLine(Resources.IntroFolder, config.BackupFolder);
+                Console.WriteLine();
+                Thread.Sleep(sleepTime);
+
                 var request = new BitbucketRequest(config);
 
                 string resource = "users/" + config.UserName;
@@ -26,13 +34,6 @@ namespace BitbucketBackup
                     Console.ReadLine();
                     return;
                 }
-
-                Console.WriteLine(Resources.IntroHeadline);
-                Console.WriteLine();
-                Console.WriteLine(Resources.IntroUser, config.UserName);
-                Console.WriteLine(Resources.IntroFolder, config.BackupFolder);
-                Console.WriteLine();
-                Thread.Sleep(sleepTime);
 
                 var json = JObject.Parse(response);
                 var repos =
