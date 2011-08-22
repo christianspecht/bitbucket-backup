@@ -137,7 +137,7 @@ Bitte überprüfen Sie den Benutzernamen!</value>
     <value>Die Bitbucket-API hat keine Antwort zurückgegeben: {0}</value>
   </data>
   <data name="PressEnter" xml:space="preserve">
-    <value>Drücken sie &lt;ENTER&gt;, um das Programm zu beenden!</value>
+    <value>Drücken Sie &lt;ENTER&gt;, um das Programm zu beenden!</value>
   </data>
   <data name="Pulling" xml:space="preserve">
     <value>Pull: {0}</value>
