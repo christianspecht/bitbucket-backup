@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AuthenticationFailed" xml:space="preserve">
+    <value>Die Authentifizierung ist fehlgeschlagen.
+Bitte überprüfen Sie das Passwort!</value>
+  </data>
   <data name="BackupCompleted" xml:space="preserve">
     <value>Backup wurde abgeschlossen!</value>
   </data>

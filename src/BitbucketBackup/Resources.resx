@@ -145,4 +145,8 @@ Please check if the user name is valid!</value>
   <data name="PressEnter" xml:space="preserve">
     <value>Press &lt;ENTER&gt; to quit!</value>
   </data>
+  <data name="AuthenticationFailed" xml:space="preserve">
+    <value>Authentication failed.
+Please check if the password is valid!</value>
+  </data>
 </root>

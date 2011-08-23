@@ -61,6 +61,16 @@ namespace BitbucketBackup {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Authentication failed.
+        ///Please check if the password is valid! ähnelt.
+        /// </summary>
+        internal static string AuthenticationFailed {
+            get {
+                return ResourceManager.GetString("AuthenticationFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Backup completed! ähnelt.
         /// </summary>
         internal static string BackupCompleted {
