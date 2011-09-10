@@ -23,3 +23,7 @@ Bitbucket Backup makes use of the following open source projects:
 
  - [Json.NET](http://json.codeplex.com/) by James Newton-King
  - [Mercurial.Net](http://mercurialnet.codeplex.com/) by Lasse V. Karlsen
+ 
+### License
+
+Bitbucket Backup is licensed under the MIT License. See **License.txt** for details.
