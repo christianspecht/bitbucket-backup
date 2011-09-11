@@ -39,7 +39,9 @@
     <MakeDir Directories="$(ReleaseDir)"/>
     <ItemGroup>
       <ReleaseFiles
-          Include="$(OutDir)\**\*.*"
+          Include="$(OutDir)\**\*.*;
+					README.md;
+					License.txt"
           Exclude="$(OutDir)\*.pdb;
 					$(OutDir)\*.xml">
       </ReleaseFiles>
