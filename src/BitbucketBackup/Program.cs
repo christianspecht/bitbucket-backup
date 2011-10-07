@@ -48,25 +48,28 @@ namespace BitbucketBackup
 
                 var repos =
                     from r in json["repositories"].Children()
-                    select new { RepoName = (string)r["slug"], HasWiki = (bool)r["has_wiki"] };
+                    select new { RepoName = (string)r["slug"], HasWiki = (bool)r["has_wiki"], Scm = (string)r["scm"] };
 
                 var baseUri = new Uri("https://bitbucket.org/" + config.UserName + "/");
 
                 foreach (var repo in repos)
                 {
-                    var repoUri = new Uri(baseUri, repo.RepoName);
-                    string repoPath = Path.Combine(config.BackupFolder, repo.RepoName);
-
-                    var updater = new RepositoryUpdater(repoUri, repoPath, config);
-                    updater.Update();
-
-                    if (repo.HasWiki)
+                    if (repo.Scm == "hg")
                     {
-                        var wikiUri = new Uri(baseUri, repo.RepoName + "/wiki");
-                        string wikiPath = Path.Combine(config.BackupFolder, repo.RepoName + "-wiki");
+                        var repoUri = new Uri(baseUri, repo.RepoName);
+                        string repoPath = Path.Combine(config.BackupFolder, repo.RepoName);
 
-                        var wikiUpdater = new RepositoryUpdater(wikiUri, wikiPath, config);
-                        wikiUpdater.Update();
+                        var updater = new RepositoryUpdater(repoUri, repoPath, config);
+                        updater.Update();
+
+                        if (repo.HasWiki)
+                        {
+                            var wikiUri = new Uri(baseUri, repo.RepoName + "/wiki");
+                            string wikiPath = Path.Combine(config.BackupFolder, repo.RepoName + "-wiki");
+
+                            var wikiUpdater = new RepositoryUpdater(wikiUri, wikiPath, config);
+                            wikiUpdater.Update();
+                        }
                     }
                 }
 
