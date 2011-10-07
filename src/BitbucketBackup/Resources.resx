@@ -132,8 +132,8 @@
   <data name="NoResponse" xml:space="preserve">
     <value>Bitbucket API didn't return a response: {0}</value>
   </data>
-  <data name="Pulling" xml:space="preserve">
-    <value>Pulling: {0}</value>
+  <data name="PullingMercurial" xml:space="preserve">
+    <value>hg pull: {0}</value>
   </data>
   <data name="ClientExceptionHeadline" xml:space="preserve">
     <value>Backup failed!</value>

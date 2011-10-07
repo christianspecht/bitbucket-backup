@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using Mercurial;
 
 namespace BitbucketBackup
 {
@@ -9,34 +7,22 @@ namespace BitbucketBackup
     /// </summary>
     internal class RepositoryUpdater
     {
-        /// <summary>
-        /// URI to remote repository
-        /// </summary>
+        private string repotype;
         private Uri repouri;
-
-        /// <summary>
-        /// URI to remote repository, but with authentication
-        /// </summary>
         private Uri repouriwithauth;
-
-        /// <summary>
-        /// local destination for repository clone
-        /// </summary>
         private string localfolder;
-
-        /// <summary>
-        /// configuration settings
-        /// </summary>
         private Config config;
 
         /// <summary>
         /// Creates a new RepositoryUpdater instance
         /// </summary>
+        /// <param name="repoType"
         /// <param name="repoUri">URI to remote repository</param>
-        /// <param name="destinationFolder">local destination for repository clone</param>
+        /// <param name="localFolder">local destination for repository clone</param>
         /// <param name="config">configuration settings</param>
-        public RepositoryUpdater(Uri repoUri, string localFolder, Config config)
+        public RepositoryUpdater(string repoType, Uri repoUri, string localFolder, Config config)
         {
+            this.repotype = repoType;
             this.repouri = repoUri;
             this.localfolder = localFolder;
             this.config = config;
@@ -50,20 +36,18 @@ namespace BitbucketBackup
         /// </summary>
         public void Update()
         {
-            if (!Directory.Exists(this.localfolder))
+            var repo = RepositoryFactory.Create(this.repotype, this.repouriwithauth.ToString(), this.localfolder);
+            
+            if (repo.PullingMessage.Contains("{0}"))
             {
-                Directory.CreateDirectory(this.localfolder);
+                Console.WriteLine(repo.PullingMessage, this.repouri);
+            }
+            else
+            {
+                Console.WriteLine(repo.PullingMessage);
             }
 
-            var repo = new Repository(this.localfolder);
-
-            if (!Directory.Exists(Path.Combine(this.localfolder,".hg")))
-            {
-                repo.Init();
-            }
-
-            Console.WriteLine(Resources.Pulling, this.repouri);
-            repo.Pull(this.repouriwithauth.ToString(), new PullCommand().WithUpdate(false));
+            repo.Pull();
         }
     }
 }

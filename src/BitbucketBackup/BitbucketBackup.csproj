@@ -53,8 +53,11 @@
     <Compile Include="BitbucketRequest.cs" />
     <Compile Include="ClientException.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="MercurialRepository.cs" />
+    <Compile Include="RepositoryBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryFactory.cs" />
     <Compile Include="RepositoryUpdater.cs" />
     <Compile Include="Resources.de.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -88,10 +91,7 @@
        Other similar extension points exist, see Microsoft.Common.targets.
        -->
   <Target Name="BeforeBuild">
-    <Copy
-      Condition="!Exists('App.config')"
-      SourceFiles="App.config.example" 
-      DestinationFiles="App.config"/>
+    <Copy Condition="!Exists('App.config')" SourceFiles="App.config.example" DestinationFiles="App.config" />
   </Target>
   <Target Name="AfterBuild">
   </Target>

@@ -144,11 +144,11 @@ namespace BitbucketBackup {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Pulling: {0} ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die hg pull: {0} ähnelt.
         /// </summary>
-        internal static string Pulling {
+        internal static string PullingMercurial {
             get {
-                return ResourceManager.GetString("Pulling", resourceCulture);
+                return ResourceManager.GetString("PullingMercurial", resourceCulture);
             }
         }
     }

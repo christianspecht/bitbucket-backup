@@ -143,7 +143,4 @@ Bitte überprüfen Sie den Benutzernamen!</value>
   <data name="PressEnter" xml:space="preserve">
     <value>Drücken Sie &lt;ENTER&gt;, um das Programm zu beenden!</value>
   </data>
-  <data name="Pulling" xml:space="preserve">
-    <value>Pull: {0}</value>
-  </data>
 </root>
