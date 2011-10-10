@@ -42,7 +42,7 @@
       <ReleaseFiles
           Include="$(OutDir)\**\*.*;
 					README.md;
-					License.txt"
+					License.rtf"
           Exclude="$(OutDir)\*.pdb;
 					$(OutDir)\*.xml">
       </ReleaseFiles>

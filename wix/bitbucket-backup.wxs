@@ -43,7 +43,7 @@
 				<File Id='JsonNet' Name='Newtonsoft.Json.dll' DiskId='1' Source='release\bin\Newtonsoft.Json.dll' KeyPath='yes' />
 			</Component>
 			<Component Id='License' Guid='{9DE17CBD-96F0-487E-A964-014337A62763}'>
-				<File Id='License' Name='License.txt' DiskId='1' Source='release\bin\License.txt' KeyPath='yes' />
+				<File Id='License' Name='License.rtf' DiskId='1' Source='release\bin\License.rtf' KeyPath='yes' />
 			</Component>
 			<Component Id='Readme' Guid='{B73CBD07-1FF2-4994-92C6-3B56068E01E3}'>
 				<File Id='Readme' Name='readme.txt' DiskId='1' Source='release\bin\README.md' KeyPath='yes' />
@@ -67,6 +67,7 @@
 		</Feature>
 		
 		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
+		<WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
 		<UIRef Id="WixUI_InstallDir" />
 		<UIRef Id="WixUI_ErrorProgressText" />
 	
