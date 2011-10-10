@@ -6,7 +6,7 @@
 
     <!-- Release Folder -->
     <!-- To change the output folder, use the following parameter: /p:BuildDir=C:\BuildTest-->
-    <ReleaseDir>release</ReleaseDir>
+    <ReleaseDir>release\bin</ReleaseDir>
 	
     <!-- Build Folder -->
     <OutDir>src\BitbucketBackup\bin\Release</OutDir>
