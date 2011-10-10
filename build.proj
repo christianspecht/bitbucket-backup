@@ -6,8 +6,9 @@
 
     <!-- Release Folder -->
     <!-- To change the output folder, use the following parameter: /p:BuildDir=C:\BuildTest-->
-    <ReleaseDir>release\bin</ReleaseDir>
-	
+    <MainReleaseDir>release</MainReleaseDir>
+    <ReleaseDir>$(MainReleaseDir)\bin</ReleaseDir>
+    
     <!-- Build Folder -->
     <OutDir>src\BitbucketBackup\bin\Release</OutDir>
 
@@ -24,7 +25,7 @@
 
   <!-- delete and re-create build folder -->
   <Target Name="DeleteReleaseFolder">
-    <RemoveDir Directories="$(ReleaseDir)"/>
+    <RemoveDir Directories="$(MainReleaseDir)"/>
   </Target>
 
 
