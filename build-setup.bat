@@ -9,6 +9,6 @@ cd %~dp0
 msbuild build.proj
 
 candle wix\bitbucket-backup.wxs
-light bitbucket-backup.wixobj -out release\msi\bitbucket-backup.msi
+light -ext WixUIExtension bitbucket-backup.wixobj -out release\msi\bitbucket-backup.msi
 
 pause

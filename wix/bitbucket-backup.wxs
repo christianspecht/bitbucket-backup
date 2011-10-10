@@ -56,7 +56,7 @@
 			</Component>
 		</DirectoryRef>
 		
-		<Feature Id='Complete' Title='$(var.ProductName)' Level='1' Display='expand'>
+		<Feature Id='Complete' Title='$(var.ProductName)' Level='1' Display='expand' ConfigurableDirectory='INSTALLDIR'>
 			<ComponentRef Id='Exe' />
 			<ComponentRef Id='Config' />
 			<ComponentRef Id='MercurialNet' />
@@ -65,6 +65,10 @@
 			<ComponentRef Id='Readme' />
 			<ComponentRef Id='ResDe' />
 		</Feature>
+		
+		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
+		<UIRef Id="WixUI_InstallDir" />
+		<UIRef Id="WixUI_ErrorProgressText" />
 	
 	</Product>
 </Wix>
