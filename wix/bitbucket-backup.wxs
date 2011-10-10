@@ -66,6 +66,11 @@
 			<ComponentRef Id='ResDe' />
 		</Feature>
 		
+		<Property Id='ARPCOMMENTS'>$(var.Description)</Property>
+		<Property Id='ARPHELPLINK'>https://bitbucket.org/christianspecht/bitbucket-backup/overview</Property>
+		<Property Id='ARPREADME'>https://bitbucket.org/christianspecht/bitbucket-backup/overview</Property>
+		<Property Id='ARPURLINFOABOUT'>http://christianspecht.bitbucket.org/</Property>
+		<Property Id='ARPURLUPDATEINFO'>https://bitbucket.org/christianspecht/bitbucket-backup/downloads</Property>
 		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
 		<WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
 		<UIRef Id="WixUI_InstallDir" />
