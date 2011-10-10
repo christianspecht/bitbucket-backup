@@ -1,0 +1,37 @@
+<?xml version='1.0'?>
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
+
+	<Product
+			Id='{96C0B39F-9AC8-49D3-AB4E-18D7E88F9E3C}'
+			Name='Bitbucket Backup'
+			Language='1033' 
+			Version='1.0.0.0'
+			Manufacturer='Christian Specht'
+			UpgradeCode='{59B6F924-ECF4-40BD-A132-537FC1CC0695}' >
+			
+		<Package 
+				Description='A backup tool which clones all your Bitbucket repositories to your local machine.'
+				Manufacturer='Christian Specht'
+				InstallerVersion='200'
+				Compressed='yes' />	
+		
+		<Media Id='1' Cabinet='bitbucketbackup.cab' EmbedCab='yes' />
+		
+		<Directory Id='TARGETDIR' Name='SourceDir'>
+			<Directory Id='ProgramFilesFolder' Name='PFiles'>
+				<Directory Id='INSTALLDIR' Name='Bitbucket Backup' />
+			</Directory>
+		</Directory>
+		
+		<DirectoryRef Id='INSTALLDIR'>
+			<Component Id='Exe' Guid='{BAEDA8A6-4D81-43B9-AB3A-D3B201C44E60}'>
+				<File Id='Exe' Name='BitbucketBackup.exe' DiskId='1' Source='release\bin\BitbucketBackup.exe' KeyPath='yes' />
+			</Component>
+		</DirectoryRef>
+		
+		<Feature Id='Complete' Title='Bitbucket Backup' Level='1' Display='expand'>
+			<ComponentRef Id='Exe' />
+		</Feature>
+	
+	</Product>
+</Wix>

@@ -5,3 +5,6 @@ obj
 *.user
 App.config
 release
+*.wixobj
+*.wixpdb
+*.msi
