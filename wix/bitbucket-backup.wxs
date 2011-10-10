@@ -1,17 +1,21 @@
 <?xml version='1.0'?>
 <Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
 
+<?define ProductName = Bitbucket Backup ?>
+<?define Manufacturer = Christian Specht ?>
+<?define Description = A backup tool which clones all your Bitbucket repositories to your local machine. ?>
+
 	<Product
 			Id='{96C0B39F-9AC8-49D3-AB4E-18D7E88F9E3C}'
-			Name='Bitbucket Backup'
+			Name='$(var.ProductName)'
 			Language='1033' 
 			Version='1.0.0.0'
-			Manufacturer='Christian Specht'
+			Manufacturer='$(var.Manufacturer)'
 			UpgradeCode='{59B6F924-ECF4-40BD-A132-537FC1CC0695}' >
 			
 		<Package 
-				Description='A backup tool which clones all your Bitbucket repositories to your local machine.'
-				Manufacturer='Christian Specht'
+				Description='$(var.Description)'
+				Manufacturer='$(var.Manufacturer)'
 				InstallerVersion='200'
 				Compressed='yes' />	
 		
@@ -19,7 +23,9 @@
 		
 		<Directory Id='TARGETDIR' Name='SourceDir'>
 			<Directory Id='ProgramFilesFolder' Name='PFiles'>
-				<Directory Id='INSTALLDIR' Name='Bitbucket Backup' />
+				<Directory Id='INSTALLDIR' Name='$(var.ProductName)'>
+					<Directory Id='DE' Name='de' />
+				</Directory>
 			</Directory>
 		</Directory>
 		
@@ -27,10 +33,37 @@
 			<Component Id='Exe' Guid='{BAEDA8A6-4D81-43B9-AB3A-D3B201C44E60}'>
 				<File Id='Exe' Name='BitbucketBackup.exe' DiskId='1' Source='release\bin\BitbucketBackup.exe' KeyPath='yes' />
 			</Component>
+			<Component Id='Config' Guid='{66443E3E-5E8F-4224-8633-2209F00B9FBC}'>
+				<File Id='Config' Name='BitbucketBackup.exe.config' DiskId='1' Source='release\bin\BitbucketBackup.exe.config' KeyPath='yes' />
+			</Component>
+			<Component Id='MercurialNet' Guid='{9FB139E7-F9EA-4DB5-BC9E-D4539D9A2EA2}'>
+				<File Id='MercurialNet' Name='Mercurial.Net.dll' DiskId='1' Source='release\bin\Mercurial.Net.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='JsonNet' Guid='{442734E0-3D34-4FB9-AD45-FC63C495835F}'>
+				<File Id='JsonNet' Name='Newtonsoft.Json.dll' DiskId='1' Source='release\bin\Newtonsoft.Json.dll' KeyPath='yes' />
+			</Component>
+			<Component Id='License' Guid='{9DE17CBD-96F0-487E-A964-014337A62763}'>
+				<File Id='License' Name='License.txt' DiskId='1' Source='release\bin\License.txt' KeyPath='yes' />
+			</Component>
+			<Component Id='Readme' Guid='{B73CBD07-1FF2-4994-92C6-3B56068E01E3}'>
+				<File Id='Readme' Name='readme.txt' DiskId='1' Source='release\bin\README.md' KeyPath='yes' />
+			</Component>
 		</DirectoryRef>
 		
-		<Feature Id='Complete' Title='Bitbucket Backup' Level='1' Display='expand'>
+		<DirectoryRef Id='DE'>
+			<Component Id='ResDe' Guid='{20AEFC29-A683-46B2-8239-14135E250C33}'>
+				<File Id='ResDe' Name='BitbucketBackup.resources.dll' DiskId='1' Source='release\bin\de\BitbucketBackup.resources.dll' KeyPath='yes' />
+			</Component>
+		</DirectoryRef>
+		
+		<Feature Id='Complete' Title='$(var.ProductName)' Level='1' Display='expand'>
 			<ComponentRef Id='Exe' />
+			<ComponentRef Id='Config' />
+			<ComponentRef Id='MercurialNet' />
+			<ComponentRef Id='JsonNet' />
+			<ComponentRef Id='License' />
+			<ComponentRef Id='Readme' />
+			<ComponentRef Id='ResDe' />
 		</Feature>
 	
 	</Product>
