@@ -1,61 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Start">
 
-  <!-- Variables -->
-  <PropertyGroup>
+	<!-- Variables -->
+	<PropertyGroup>
 
-    <!-- Release Folder -->
-    <!-- To change the output folder, use the following parameter: /p:BuildDir=C:\BuildTest-->
-    <MainReleaseDir>release</MainReleaseDir>
-    <ReleaseDir>$(MainReleaseDir)\bin</ReleaseDir>
-    
-    <!-- Build Folder -->
-    <OutDir>src\BitbucketBackup\bin\Release</OutDir>
+		<!-- Release Folder -->
+		<!-- To change the output folder, use the following parameter: /p:BuildDir=C:\BuildTest-->
+		<MainReleaseDir>release</MainReleaseDir>
+		<ReleaseDir>$(MainReleaseDir)\bin</ReleaseDir>
 
-  </PropertyGroup>
-  
+		<!-- Build Folder -->
+		<OutDir>src\BitbucketBackup\bin\Release</OutDir>
 
-  <!-- "Autostart" -->
-  <Target Name="Start">
-    <CallTarget Targets="DeleteReleaseFolder"/>
-    <CallTarget Targets="Build"/>
-    <CallTarget Targets="CopyRelease"/>
-  </Target>
+	</PropertyGroup>
 
 
-  <!-- delete and re-create build folder -->
-  <Target Name="DeleteReleaseFolder">
-    <RemoveDir Directories="$(MainReleaseDir)"/>
-  </Target>
+	<!-- "Autostart" -->
+	<Target Name="Start">
+		<CallTarget Targets="DeleteReleaseFolder"/>
+		<CallTarget Targets="Build"/>
+		<CallTarget Targets="CopyRelease"/>
+	</Target>
 
 
-  <!-- compile solution as release -->
-  <Target Name="Build">
-    <MSBuild Projects="src\BitbucketBackup.sln" Properties="Configuration=Release"/>
-  </Target>
+	<!-- delete and re-create build folder -->
+	<Target Name="DeleteReleaseFolder">
+		<RemoveDir Directories="$(MainReleaseDir)"/>
+	</Target>
 
 
-  <!-- copy files to release folder -->
-  <Target Name="CopyRelease">
-    <MakeDir Directories="$(ReleaseDir)"/>
-    <ItemGroup>
-      <ReleaseFiles
-          Include="$(OutDir)\**\*.*;
+	<!-- compile solution as release -->
+	<Target Name="Build">
+		<MSBuild Projects="src\BitbucketBackup.sln" Properties="Configuration=Release"/>
+	</Target>
+
+
+	<!-- copy files to release folder -->
+	<Target Name="CopyRelease">
+		<MakeDir Directories="$(ReleaseDir)"/>
+		<ItemGroup>
+			<ReleaseFiles
+				Include="$(OutDir)\**\*.*;
 					README.md;
 					License.rtf"
-          Exclude="$(OutDir)\*.pdb;
+				Exclude="$(OutDir)\*.pdb;
 					$(OutDir)\*.xml">
-      </ReleaseFiles>
-    </ItemGroup>
-    <Copy SourceFiles="@(ReleaseFiles)" DestinationFiles="@(ReleaseFiles -> '$(ReleaseDir)\%(RecursiveDir)%(Filename)%(Extension)')"/>
-	
-	<!-- rename App.config.example to app.config -->
-	<Copy 
-		SourceFiles="$(ReleaseDir)\App.config.example" 
-		DestinationFiles="$(ReleaseDir)\BitbucketBackup.exe.config"/>	
-	<Delete Files="$(ReleaseDir)\App.config.example"/>
-	
-  </Target>
+			</ReleaseFiles>
+		</ItemGroup>
+		<Copy SourceFiles="@(ReleaseFiles)" DestinationFiles="@(ReleaseFiles -> '$(ReleaseDir)\%(RecursiveDir)%(Filename)%(Extension)')"/>
 
+		<!-- rename App.config.example to app.config -->
+		<Copy 
+			SourceFiles="$(ReleaseDir)\App.config.example" 
+			DestinationFiles="$(ReleaseDir)\BitbucketBackup.exe.config"/>	
+		<Delete Files="$(ReleaseDir)\App.config.example"/>
+
+	</Target>
 
 </Project>
