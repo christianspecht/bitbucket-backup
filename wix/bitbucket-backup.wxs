@@ -7,9 +7,9 @@
 
 	<Product
 			Id='{96C0B39F-9AC8-49D3-AB4E-18D7E88F9E3C}'
-			Name='$(var.ProductName)'
+			Name='$(var.ProductName) $(env.VersionNumber)'
 			Language='1033' 
-			Version='1.0.0.0'
+			Version='$(env.VersionNumber)'
 			Manufacturer='$(var.Manufacturer)'
 			UpgradeCode='{59B6F924-ECF4-40BD-A132-537FC1CC0695}' >
 			
