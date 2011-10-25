@@ -149,4 +149,7 @@ Please check if the user name is valid!</value>
     <value>Authentication failed.
 Please check if the password is valid!</value>
   </data>
+  <data name="PullingGit" xml:space="preserve">
+    <value>git pull: {0}</value>
+  </data>
 </root>

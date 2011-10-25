@@ -53,6 +53,8 @@
     <Compile Include="BitbucketRequest.cs" />
     <Compile Include="ClientException.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="GitRepository.cs" />
+    <Compile Include="GitWrapper.cs" />
     <Compile Include="MercurialRepository.cs" />
     <Compile Include="RepositoryBase.cs" />
     <Compile Include="Program.cs" />
