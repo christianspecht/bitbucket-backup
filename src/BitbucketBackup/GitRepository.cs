@@ -17,7 +17,7 @@ namespace BitbucketBackup
 
             if (!Directory.Exists(Path.Combine(this.folder, ".git")))
             {
-                this.git.Execute("init");
+                this.git.Execute("init --bare");
             }
         }
 
@@ -28,7 +28,7 @@ namespace BitbucketBackup
 
         public override void Pull()
         {
-            this.git.Execute("pull " + this.remoteuri + " --bare");
+            this.git.Execute("fetch " + this.remoteuri + " refs/heads/*:refs/heads/*");
         }
     }
 }
