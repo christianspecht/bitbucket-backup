@@ -15,7 +15,7 @@ namespace BitbucketBackup
         {
             this.git = new GitWrapper(folder);
 
-            if (!Directory.Exists(Path.Combine(this.folder, ".git")))
+            if (!File.Exists(Path.Combine(this.folder, "HEAD")))
             {
                 this.git.Execute("init --bare");
             }
