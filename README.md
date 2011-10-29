@@ -18,7 +18,7 @@ Bitbucket Backup loads all important values (your Bitbucket username and passwor
 Before you run Bitbucket Backup the first time, you need to edit **BitbucketBackup.exe.config** and provide your data.  
 
 Please note that Bitbucket Backup assumes that you have the Mercurial and Git executables in your **%PATH%** variable.  
-**ATTENTION:** At the moment, Git only works when you have the **bin** directory in your **%PATH%** variable.
+(depending on the version, Git may come with a **git.exe** AND a **git.cmd** - it doesn't matter which one is in the **%PATH%**, Bitbucket Backup will find both)
 
 ### Acknowledgements
 
