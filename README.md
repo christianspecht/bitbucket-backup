@@ -8,6 +8,9 @@ Bitbucket Backup uses the [Bitbucket API](https://api.bitbucket.org/) to get a l
 Then, it uses [Mercurial](http://mercurial.selenic.com/) and/or [Git](http://git-scm.com/) (which need to be installed on your machine if you have at least one repository of the given type) to clone every repository into your local backup folder (or just pull the newest changes if it already **is** in your local backup folder).  
 It also checks for each repository, whether it has a wiki ([which is a repository itself](http://confluence.atlassian.com/display/BITBUCKET/Using+your+Bitbucket+Wiki)). If yes, that will be automatically cloned/pulled as well.
 
+**DISCLAIMER: Git support is still very unstable.**  
+For now, it works on my machine with Git 1.7.7 (but not on another machine with Git v1.6.5.1, for example). It definitely needs improvement.
+
 ## How to build
 
 Just run **build.bat** in the main folder. This will create a new folder named **release** with the compiled exe.
