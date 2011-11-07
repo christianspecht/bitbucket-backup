@@ -52,7 +52,7 @@ namespace BitbucketBackup
 
                 var baseUri = new Uri("https://bitbucket.org/" + config.UserName + "/");
 
-                foreach (var repo in repos)
+                foreach (var repo in repos.OrderBy(r => r.RepoName))
                 {
                     var repoUri = new Uri(baseUri, repo.RepoName);
                     string repoPath = Path.Combine(config.BackupFolder, repo.RepoName);
