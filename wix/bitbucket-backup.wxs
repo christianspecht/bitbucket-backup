@@ -27,11 +27,24 @@
 					<Directory Id='DE' Name='de' />
 				</Directory>
 			</Directory>
+			<Directory Id='ProgramMenuFolder' Name='Programs'>
+				<Directory Id='ProgramMenuDir' Name='$(var.ProductName)'>
+					<Component Id='ProgramMenuDir' Guid='{B1FE2182-00B0-4844-B7B7-FC99171397CF}'>
+						<RemoveFolder Id='ProgramMenuDir' On='uninstall' />
+						<RegistryValue
+						Root='HKCU' Key='Software\$(var.ProductName)'
+						Type='string' Value='[INSTALLDIR]' KeyPath='yes'
+						/>
+					</Component>
+				</Directory>
+			</Directory>
 		</Directory>
 		
 		<DirectoryRef Id='INSTALLDIR'>
 			<Component Id='Exe' Guid='{BAEDA8A6-4D81-43B9-AB3A-D3B201C44E60}'>
-				<File Id='Exe' Name='BitbucketBackup.exe' DiskId='1' Source='release\bin\BitbucketBackup.exe' KeyPath='yes' />
+				<File Id='Exe' Name='BitbucketBackup.exe' DiskId='1' Source='release\bin\BitbucketBackup.exe' KeyPath='yes'>
+					<Shortcut Id='BitbucketBackupExeShortcut' Directory='ProgramMenuDir' Name='Bitbucket Backup' WorkingDirectory='INSTALLDIR' Advertise='yes'/>
+				</File>
 			</Component>
 			<Component Id='Config' Guid='{66443E3E-5E8F-4224-8633-2209F00B9FBC}'>
 				<File Id='Config' Name='BitbucketBackup.exe.config' DiskId='1' Source='release\bin\BitbucketBackup.exe.config' KeyPath='yes' />
@@ -57,6 +70,7 @@
 		</DirectoryRef>
 		
 		<Feature Id='Complete' Title='$(var.ProductName)' Level='1' Display='expand' ConfigurableDirectory='INSTALLDIR'>
+			<ComponentRef Id='ProgramMenuDir' />
 			<ComponentRef Id='Exe' />
 			<ComponentRef Id='Config' />
 			<ComponentRef Id='MercurialNet' />
