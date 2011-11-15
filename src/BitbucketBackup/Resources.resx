@@ -121,7 +121,7 @@
     <value>Backup completed!</value>
   </data>
   <data name="IntroHeadline" xml:space="preserve">
-    <value>Bitbucket Backup</value>
+    <value>Bitbucket Backup {0}</value>
   </data>
   <data name="IntroFolder" xml:space="preserve">
     <value>Local backup folder: {0}</value>

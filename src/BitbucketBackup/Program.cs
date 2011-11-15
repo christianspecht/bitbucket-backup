@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 using Newtonsoft.Json.Linq;
 
@@ -16,7 +18,7 @@ namespace BitbucketBackup
             {
                 var config = new Config();
 
-                Console.WriteLine(Resources.IntroHeadline);
+                Console.WriteLine(Resources.IntroHeadline, FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
                 Console.WriteLine();
                 Console.WriteLine(Resources.IntroUser, config.UserName);
                 Console.WriteLine(Resources.IntroFolder, config.BackupFolder);
