@@ -38,7 +38,7 @@ Bitbucket Backup makes use of the following open source projects:
  - [MSBuild Community Tasks](http://msbuildtasks.tigris.org/)
  - [WiX](http://wix.codeplex.com/)
  
- The logo is based on a [floppy icon from Wikimedia Commons](http://commons.wikimedia.org/wiki/File:Media-floppy.svg).
+ The logo is based on a [floppy icon from Wikimedia Commons](http://commons.wikimedia.org/wiki/File%3aMedia-floppy.svg).
  
 ### License
 
