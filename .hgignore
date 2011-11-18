@@ -9,3 +9,4 @@ release
 *.wixpdb
 *.msi
 AssemblyVersion.cs
+Thumbs.db

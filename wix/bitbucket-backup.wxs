@@ -43,7 +43,7 @@
 		<DirectoryRef Id='INSTALLDIR'>
 			<Component Id='Exe' Guid='{BAEDA8A6-4D81-43B9-AB3A-D3B201C44E60}'>
 				<File Id='Exe' Name='BitbucketBackup.exe' DiskId='1' Source='release\bin\BitbucketBackup.exe' KeyPath='yes'>
-					<Shortcut Id='BitbucketBackupExeShortcut' Directory='ProgramMenuDir' Name='Bitbucket Backup' WorkingDirectory='INSTALLDIR' Advertise='yes'/>
+					<Shortcut Id='BitbucketBackupExeShortcut' Directory='ProgramMenuDir' Name='Bitbucket Backup' WorkingDirectory='INSTALLDIR' Advertise='yes' Icon='logo.ico' IconIndex='0'/>
 				</File>
 			</Component>
 			<Component Id='Config' Guid='{66443E3E-5E8F-4224-8633-2209F00B9FBC}'>
@@ -85,8 +85,10 @@
 		<Property Id='ARPREADME'>https://bitbucket.org/christianspecht/bitbucket-backup/overview</Property>
 		<Property Id='ARPURLINFOABOUT'>http://christianspecht.bitbucket.org/</Property>
 		<Property Id='ARPURLUPDATEINFO'>https://bitbucket.org/christianspecht/bitbucket-backup/downloads</Property>
+		<Property Id='ARPPRODUCTICON'>logo.ico</Property>
 		<Property Id='WIXUI_INSTALLDIR' Value='INSTALLDIR' />
 		<WixVariable Id='WixUILicenseRtf' Value='License.rtf' />
+		<Icon Id='logo.ico' SourceFile='img\logo.ico' />
 		<UIRef Id='WixUI_InstallDir' />
 		<UIRef Id='WixUI_ErrorProgressText' />
 	

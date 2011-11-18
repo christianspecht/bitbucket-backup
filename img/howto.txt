@@ -1,0 +1,7 @@
+The original image is logo.pdn.
+(.pdn is Paint.NET's format)
+
+The floppy image is from Wikimedia Commons (http://commons.wikimedia.org/wiki/File:Media-floppy.svg), edited by me.
+The font is Tahoma.
+
+The .ico file was created with Junior Icon Editor (http://www.sibcode.com/junior-icon-editor/)
