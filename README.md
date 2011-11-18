@@ -5,13 +5,19 @@ Bitbucket Backup is a backup tool which backups all your [Bitbucket](https://bit
 ## How does it work?
 
 Bitbucket Backup uses the [Bitbucket API](https://api.bitbucket.org/) to get a list of all your repositories.  
-Then, it uses [Mercurial](http://mercurial.selenic.com/) (which needs to be installed on your machine) to clone every repository into your local backup folder (or just pull the newest changes if it already **is** in your local backup folder).  
-It also checks for each repository, whether it has a wiki ([which is a Mercurial repository itself](http://confluence.atlassian.com/display/BITBUCKET/Using+your+Bitbucket+Wiki)). If yes, that will be automatically cloned/pulled as well.
+Then, it uses [Mercurial](http://mercurial.selenic.com/) and/or [Git](http://git-scm.com/) (which need to be installed on your machine if you have at least one repository of the given type) to clone every repository into your local backup folder (or just pull the newest changes if it already **is** in your local backup folder).  
+It also checks for each repository, whether it has a wiki ([which is a repository itself](http://confluence.atlassian.com/display/BITBUCKET/Using+your+Bitbucket+Wiki)). If yes, that will be automatically cloned/pulled as well.
+
+**DISCLAIMER: Git support is still very unstable.**  
+For now, it works on my machine with Git 1.7.7 (but not on another machine with Git v1.6.5.1, for example). It definitely needs improvement.
 
 ## Setup
 
 Bitbucket Backup loads all important values (your Bitbucket username and password, and the backup folder on your local machine) from a config file.  
-Before you run Bitbucket Backup the first time, you need to edit **BitbucketBackup.exe.config** and provide your data.
+Before you run Bitbucket Backup the first time, you need to edit **BitbucketBackup.exe.config** and provide your data.  
+
+Please note that Bitbucket Backup assumes that you have the Mercurial and Git executables in your **%PATH%** variable.  
+(depending on the version, Git may come with a **git.exe** AND a **git.cmd** - it doesn't matter which one is in the **%PATH%**, Bitbucket Backup will find both)
 
 ## How to build
 

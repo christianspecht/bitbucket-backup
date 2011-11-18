@@ -133,7 +133,7 @@
     <value>Bitbucket API didn't return a response: {0}</value>
   </data>
   <data name="PullingMercurial" xml:space="preserve">
-    <value>hg pull: {0}</value>
+    <value> hg pull: {0}</value>
   </data>
   <data name="ClientExceptionHeadline" xml:space="preserve">
     <value>Backup failed!</value>
@@ -148,5 +148,8 @@ Please check if the user name is valid!</value>
   <data name="AuthenticationFailed" xml:space="preserve">
     <value>Authentication failed.
 Please check if the password is valid!</value>
+  </data>
+  <data name="PullingGit" xml:space="preserve">
+    <value>git pull: {0}</value>
   </data>
 </root>

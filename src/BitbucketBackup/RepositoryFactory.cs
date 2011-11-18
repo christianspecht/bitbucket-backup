@@ -16,6 +16,8 @@ namespace BitbucketBackup
             {
                 case "hg":
                     return new MercurialRepository(remoteUri, localFolder);
+                case "git":
+                    return new GitRepository(remoteUri, localFolder);
                 default:
                     return null;
             }

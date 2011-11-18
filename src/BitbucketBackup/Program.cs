@@ -54,24 +54,21 @@ namespace BitbucketBackup
 
                 var baseUri = new Uri("https://bitbucket.org/" + config.UserName + "/");
 
-                foreach (var repo in repos)
+                foreach (var repo in repos.OrderBy(r => r.RepoName))
                 {
-                    if (repo.Scm == "hg")
+                    var repoUri = new Uri(baseUri, repo.RepoName);
+                    string repoPath = Path.Combine(config.BackupFolder, repo.RepoName);
+
+                    var updater = new RepositoryUpdater(repo.Scm, repoUri, repoPath, config);
+                    updater.Update();
+
+                    if (repo.HasWiki)
                     {
-                        var repoUri = new Uri(baseUri, repo.RepoName);
-                        string repoPath = Path.Combine(config.BackupFolder, repo.RepoName);
+                        var wikiUri = new Uri(baseUri, repo.RepoName + "/wiki");
+                        string wikiPath = Path.Combine(config.BackupFolder, repo.RepoName + "-wiki");
 
-                        var updater = new RepositoryUpdater(repo.Scm, repoUri, repoPath, config);
-                        updater.Update();
-
-                        if (repo.HasWiki)
-                        {
-                            var wikiUri = new Uri(baseUri, repo.RepoName + "/wiki");
-                            string wikiPath = Path.Combine(config.BackupFolder, repo.RepoName + "-wiki");
-
-                            var wikiUpdater = new RepositoryUpdater(repo.Scm, wikiUri, wikiPath, config);
-                            wikiUpdater.Update();
-                        }
+                        var wikiUpdater = new RepositoryUpdater(repo.Scm, wikiUri, wikiPath, config);
+                        wikiUpdater.Update();
                     }
                 }
 
