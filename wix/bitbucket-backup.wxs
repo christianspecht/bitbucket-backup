@@ -1,17 +1,20 @@
 <?xml version='1.0'?>
 <Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
 
+<?define ProductId = {96C0B39F-9AC8-49D3-AB4E-18D7E88F9E3C} ?>
+<?define UpgradeCode = {59B6F924-ECF4-40BD-A132-537FC1CC0695} ?>
+
 <?define ProductName = Bitbucket Backup ?>
 <?define Manufacturer = Christian Specht ?>
 <?define Description = A backup tool which clones all your Bitbucket repositories to your local machine. ?>
 
 	<Product
-			Id='{96C0B39F-9AC8-49D3-AB4E-18D7E88F9E3C}'
+			Id='$(var.ProductId)'
 			Name='$(var.ProductName) $(env.VersionNumber)'
 			Language='1033' 
 			Version='$(env.VersionNumber)'
 			Manufacturer='$(var.Manufacturer)'
-			UpgradeCode='{59B6F924-ECF4-40BD-A132-537FC1CC0695}' >
+			UpgradeCode='$(var.UpgradeCode)' >
 			
 		<Package 
 				Description='$(var.Description)'
