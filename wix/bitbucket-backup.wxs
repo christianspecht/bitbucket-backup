@@ -88,6 +88,8 @@
 		<Property Id='ARPPRODUCTICON'>logo.ico</Property>
 		<Property Id='WIXUI_INSTALLDIR' Value='INSTALLDIR' />
 		<WixVariable Id='WixUILicenseRtf' Value='License.rtf' />
+		<WixVariable Id="WixUIBannerBmp" Value='wix\wixbanner.bmp' />
+		<WixVariable Id="WixUIDialogBmp" Value='wix\wixdialog.bmp' />
 		<Icon Id='logo.ico' SourceFile='img\logo.ico' />
 		<UIRef Id='WixUI_InstallDir' />
 		<UIRef Id='WixUI_ErrorProgressText' />
