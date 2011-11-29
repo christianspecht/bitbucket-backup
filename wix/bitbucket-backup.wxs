@@ -85,6 +85,15 @@
 			<ComponentRef Id='ResDe' />
 		</Feature>
 		
+		<Upgrade Id='$(var.UpgradeCode)'>
+			<UpgradeVersion OnlyDetect='yes' Minimum='$(env.VersionNumber)' Property='NEWERVERSIONDETECTED' IncludeMinimum='no' />
+			<UpgradeVersion OnlyDetect='no' Maximum='$(env.VersionNumber)' Property='OLDERVERSIONBEINGUPGRADED' IncludeMaximum='no' />
+		</Upgrade>
+		
+		<InstallExecuteSequence>
+			<RemoveExistingProducts After="InstallInitialize" />
+		</InstallExecuteSequence>
+		
 		<Property Id='ARPCOMMENTS'>$(var.Description)</Property>
 		<Property Id='ARPHELPLINK'>https://bitbucket.org/christianspecht/bitbucket-backup/overview</Property>
 		<Property Id='ARPREADME'>https://bitbucket.org/christianspecht/bitbucket-backup/overview</Property>
