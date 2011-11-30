@@ -22,6 +22,11 @@
 				InstallerVersion='200'
 				Compressed='yes' />	
 		
+		<PropertyRef Id='NETFRAMEWORK40CLIENT'/>
+		<Condition Message='This setup requires the .NET Framework 4.0 Client Profile installed.'>
+			<![CDATA[Installed OR NETFRAMEWORK40CLIENT]]>
+		</Condition>
+		
 		<Media Id='1' Cabinet='bitbucketbackup.cab' EmbedCab='yes' />
 		
 		<Directory Id='TARGETDIR' Name='SourceDir'>
