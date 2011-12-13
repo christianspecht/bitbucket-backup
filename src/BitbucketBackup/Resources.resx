@@ -152,4 +152,16 @@ Please check if the password is valid!</value>
   <data name="PullingGit" xml:space="preserve">
     <value>git pull: {0}</value>
   </data>
+  <data name="InputBackupFolder" xml:space="preserve">
+    <value>Local backup folder:</value>
+  </data>
+  <data name="InputPassword" xml:space="preserve">
+    <value>Your Bitbucket password:</value>
+  </data>
+  <data name="InputUser" xml:space="preserve">
+    <value>Your Bitbucket username:</value>
+  </data>
+  <data name="SettingsPrompt" xml:space="preserve">
+    <value>Press &lt;SPACE&gt; in the next {0} seconds to re-enter your settings!</value>
+  </data>
 </root>

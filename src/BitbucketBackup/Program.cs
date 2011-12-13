@@ -12,7 +12,8 @@ namespace BitbucketBackup
     {
         static void Main(string[] args)
         {
-            int sleepTime = 2000;
+            int waitSeconds = 2;
+            int waitInputSeconds = 10;
 
             try
             {
@@ -20,10 +21,40 @@ namespace BitbucketBackup
 
                 Console.WriteLine(Resources.IntroHeadline, FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
                 Console.WriteLine();
+
+                bool enterConfig = false;
+
+                if (config.IsComplete)
+                {
+                    Console.WriteLine(Resources.SettingsPrompt, waitInputSeconds);
+                    Console.WriteLine();
+
+                    for (int seconds = 0; seconds < waitInputSeconds; seconds++)
+                    {
+                        if (Console.KeyAvailable)
+                        {
+                            ConsoleKeyInfo info = Console.ReadKey(true);
+                            if (info.Key == ConsoleKey.Spacebar)
+                            {
+                                enterConfig = true;
+                                break;
+                            }
+                        }
+
+                        Thread.Sleep(1000);
+                    }
+                }
+
+                if (enterConfig || !config.IsComplete)
+                {
+                    config.Input();
+                    Console.WriteLine();
+                }
+                
                 Console.WriteLine(Resources.IntroUser, config.UserName);
                 Console.WriteLine(Resources.IntroFolder, config.BackupFolder);
                 Console.WriteLine();
-                Thread.Sleep(sleepTime);
+                Thread.Sleep(waitSeconds * 1000);
 
                 var request = new BitbucketRequest(config);
 
@@ -74,7 +105,7 @@ namespace BitbucketBackup
 
                 Console.WriteLine();
                 Console.WriteLine(Resources.BackupCompleted);
-                Thread.Sleep(sleepTime);
+                Thread.Sleep(waitSeconds * 1000);
             }
             catch (ClientException ex)
             {

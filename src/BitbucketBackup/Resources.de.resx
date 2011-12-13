@@ -127,6 +127,15 @@ Bitte überprüfen Sie das Passwort!</value>
   <data name="ClientExceptionHeadline" xml:space="preserve">
     <value>Backup fehlgeschlagen!</value>
   </data>
+  <data name="InputBackupFolder" xml:space="preserve">
+    <value>Lokaler Backup-Ordner:</value>
+  </data>
+  <data name="InputPassword" xml:space="preserve">
+    <value>Ihr Bitbucket-Passwort:</value>
+  </data>
+  <data name="InputUser" xml:space="preserve">
+    <value>Ihr Bitbucket-Benutzername:</value>
+  </data>
   <data name="IntroFolder" xml:space="preserve">
     <value>Lokaler Backup-Ordner: {0}</value>
   </data>
@@ -142,5 +151,9 @@ Bitte überprüfen Sie den Benutzernamen!</value>
   </data>
   <data name="PressEnter" xml:space="preserve">
     <value>Drücken Sie &lt;ENTER&gt;, um das Programm zu beenden!</value>
+  </data>
+  <data name="SettingsPrompt" xml:space="preserve">
+    <value>Drücken Sie &lt;LEERTASTE&gt; in den nächsten {0} Sekunden,
+um Ihre Einstellungen zu ändern!</value>
   </data>
 </root>

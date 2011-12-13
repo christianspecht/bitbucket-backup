@@ -3,7 +3,6 @@ bin
 obj
 *.suo
 *.user
-App.config
 release
 *.wixobj
 *.wixpdb

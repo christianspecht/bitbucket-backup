@@ -49,12 +49,6 @@
 		</ItemGroup>
 		<Copy SourceFiles="@(ReleaseFiles)" DestinationFiles="@(ReleaseFiles -> '$(ReleaseDir)\%(RecursiveDir)%(Filename)%(Extension)')"/>
 
-		<!-- rename App.config.example to app.config -->
-		<Copy 
-			SourceFiles="$(ReleaseDir)\App.config.example" 
-			DestinationFiles="$(ReleaseDir)\BitbucketBackup.exe.config"/>	
-		<Delete Files="$(ReleaseDir)\App.config.example"/>
-
 	</Target>
 
 </Project>

@@ -89,6 +89,33 @@ namespace BitbucketBackup {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Local backup folder: ähnelt.
+        /// </summary>
+        internal static string InputBackupFolder {
+            get {
+                return ResourceManager.GetString("InputBackupFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Your Bitbucket password: ähnelt.
+        /// </summary>
+        internal static string InputPassword {
+            get {
+                return ResourceManager.GetString("InputPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Your Bitbucket username: ähnelt.
+        /// </summary>
+        internal static string InputUser {
+            get {
+                return ResourceManager.GetString("InputUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Local backup folder: {0} ähnelt.
         /// </summary>
         internal static string IntroFolder {
@@ -158,6 +185,15 @@ namespace BitbucketBackup {
         internal static string PullingMercurial {
             get {
                 return ResourceManager.GetString("PullingMercurial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Press &lt;SPACE&gt; in the next {0} seconds to re-enter your settings! ähnelt.
+        /// </summary>
+        internal static string SettingsPrompt {
+            get {
+                return ResourceManager.GetString("SettingsPrompt", resourceCulture);
             }
         }
     }

@@ -57,6 +57,11 @@
     <Compile Include="GitRepository.cs" />
     <Compile Include="GitWrapper.cs" />
     <Compile Include="MercurialRepository.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="RepositoryBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,8 +80,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="App.config.example">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -93,19 +99,15 @@
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
        -->
-  <Import Project="..\..\lib\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+  <Import Project="..\..\lib\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
   <Target Name="BeforeBuild">
-	<PropertyGroup>
-		<ProdVer>0.0</ProdVer>
-	</PropertyGroup>
-	<PropertyGroup>
-		<ProdVer Condition="'$(VersionNumber)' != ''">$(VersionNumber)</ProdVer>
-	</PropertyGroup>
-  		<AssemblyInfo CodeLanguage="CS"
-			OutputFile="AssemblyVersion.cs"
-			AssemblyVersion="$(ProdVer)" 
-			AssemblyFileVersion="$(ProdVer)" />
-    <Copy Condition="!Exists('App.config')" SourceFiles="App.config.example" DestinationFiles="App.config" />
+    <PropertyGroup>
+      <ProdVer>0.0</ProdVer>
+    </PropertyGroup>
+    <PropertyGroup>
+      <ProdVer Condition="'$(VersionNumber)' != ''">$(VersionNumber)</ProdVer>
+    </PropertyGroup>
+    <AssemblyInfo CodeLanguage="CS" OutputFile="AssemblyVersion.cs" AssemblyVersion="$(ProdVer)" AssemblyFileVersion="$(ProdVer)" />
   </Target>
   <Target Name="AfterBuild">
   </Target>
