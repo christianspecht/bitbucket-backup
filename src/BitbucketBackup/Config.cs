@@ -15,14 +15,13 @@ namespace BitbucketBackup
         {
             get
             {
-                return Settings.Default.PassWord;
+                return StringEncryptor.Decrypt(Settings.Default.PassWord);
             }
             private set
             {
-                Settings.Default.PassWord = value;
+                Settings.Default.PassWord = StringEncryptor.Encrypt(value);
                 Settings.Default.Save();
             }
-
         }
 
         /// <summary>
