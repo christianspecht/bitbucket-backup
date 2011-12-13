@@ -128,13 +128,22 @@ Bitte überprüfen Sie das Passwort!</value>
     <value>Backup fehlgeschlagen!</value>
   </data>
   <data name="InputBackupFolder" xml:space="preserve">
-    <value>Lokaler Backup-Ordner:</value>
+    <value>Lokaler Backup-Ordner (muß schon existieren):</value>
+  </data>
+  <data name="InputBackupFolderInvalid" xml:space="preserve">
+    <value>Sie haben keinen oder einen nicht existierenden Backup-Ordner eingegeben!</value>
   </data>
   <data name="InputPassword" xml:space="preserve">
     <value>Ihr Bitbucket-Passwort:</value>
   </data>
+  <data name="InputPasswordInvalid" xml:space="preserve">
+    <value>Sie haben kein Passwort eingegeben!</value>
+  </data>
   <data name="InputUser" xml:space="preserve">
     <value>Ihr Bitbucket-Benutzername:</value>
+  </data>
+  <data name="InputUserInvalid" xml:space="preserve">
+    <value>Sie haben keinen Benutzernamen eingegeben!</value>
   </data>
   <data name="IntroFolder" xml:space="preserve">
     <value>Lokaler Backup-Ordner: {0}</value>

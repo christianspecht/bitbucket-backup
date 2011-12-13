@@ -153,7 +153,7 @@ Please check if the password is valid!</value>
     <value>git pull: {0}</value>
   </data>
   <data name="InputBackupFolder" xml:space="preserve">
-    <value>Local backup folder:</value>
+    <value>Local backup folder (must already exist):</value>
   </data>
   <data name="InputPassword" xml:space="preserve">
     <value>Your Bitbucket password:</value>
@@ -163,5 +163,14 @@ Please check if the password is valid!</value>
   </data>
   <data name="SettingsPrompt" xml:space="preserve">
     <value>Press &lt;SPACE&gt; in the next {0} seconds to re-enter your settings!</value>
+  </data>
+  <data name="InputBackupFolderInvalid" xml:space="preserve">
+    <value>You didn't enter a backup folder (or an invalid one)!</value>
+  </data>
+  <data name="InputPasswordInvalid" xml:space="preserve">
+    <value>You didn't enter a password!</value>
+  </data>
+  <data name="InputUserInvalid" xml:space="preserve">
+    <value>You didn't enter a username!</value>
   </data>
 </root>

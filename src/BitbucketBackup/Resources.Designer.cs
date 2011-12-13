@@ -89,11 +89,20 @@ namespace BitbucketBackup {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Local backup folder: ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Local backup folder (must already exist): ähnelt.
         /// </summary>
         internal static string InputBackupFolder {
             get {
                 return ResourceManager.GetString("InputBackupFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die You didn&apos;t enter a backup folder (or an invalid one)! ähnelt.
+        /// </summary>
+        internal static string InputBackupFolderInvalid {
+            get {
+                return ResourceManager.GetString("InputBackupFolderInvalid", resourceCulture);
             }
         }
         
@@ -107,11 +116,29 @@ namespace BitbucketBackup {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die You didn&apos;t enter a password! ähnelt.
+        /// </summary>
+        internal static string InputPasswordInvalid {
+            get {
+                return ResourceManager.GetString("InputPasswordInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Your Bitbucket username: ähnelt.
         /// </summary>
         internal static string InputUser {
             get {
                 return ResourceManager.GetString("InputUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die You didn&apos;t enter a username! ähnelt.
+        /// </summary>
+        internal static string InputUserInvalid {
+            get {
+                return ResourceManager.GetString("InputUserInvalid", resourceCulture);
             }
         }
         

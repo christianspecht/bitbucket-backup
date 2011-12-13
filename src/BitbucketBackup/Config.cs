@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using BitbucketBackup.Properties;
 
 namespace BitbucketBackup
@@ -19,6 +20,11 @@ namespace BitbucketBackup
             }
             private set
             {
+                if (value == string.Empty)
+                {
+                    throw new ClientException(Resources.InputPasswordInvalid, null);
+                }
+
                 Settings.Default.PassWord = StringEncryptor.Encrypt(value);
                 Settings.Default.Save();
             }
@@ -35,6 +41,11 @@ namespace BitbucketBackup
             }
             private set
             {
+                if (value == string.Empty)
+                {
+                    throw new ClientException(Resources.InputUserInvalid, null);
+                }
+
                 Settings.Default.UserName = value;
                 Settings.Default.Save();
             }
@@ -51,6 +62,11 @@ namespace BitbucketBackup
             }
             private set
             {
+                if (value == string.Empty || !Directory.Exists(value))
+                {
+                    throw new ClientException(Resources.InputBackupFolderInvalid, null);
+                }
+
                 Settings.Default.BackupFolder = value;
                 Settings.Default.Save();
             }
