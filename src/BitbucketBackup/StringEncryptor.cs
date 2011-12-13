@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Security.Cryptography;
+using System.Security.Principal;
 using System.Text;
 
 namespace BitbucketBackup
@@ -12,7 +13,7 @@ namespace BitbucketBackup
         /// <summary>
         /// entropy for password encryption
         /// </summary>
-        private readonly static byte[] entropy = { 1, 2, 3, 4 };
+        private readonly static byte[] entropy = Encoding.Unicode.GetBytes(WindowsIdentity.GetCurrent().User.ToString());
 
         /// <summary>
         /// Encrypts the given string.
