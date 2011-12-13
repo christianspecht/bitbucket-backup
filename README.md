@@ -17,19 +17,19 @@ To install Bitbucket Backup on your machine, just run the setup.
 When you run Bitbucket Backup the first time, it will ask you for your Bitbucket username and password, and for the backup folder (must be an existing folder on your local machine).  
 After that, Bitbucket Backup will run without user interaction, but you can re-enter your data any time by pressing **SPACE** on startup.
 
-Please note that Bitbucket Backup assumes that you have the Mercurial and Git executables in your **%PATH%** variable.  
-(depending on the version, Git may come with a **git.exe** AND a **git.cmd** - it doesn't matter which one is in the **%PATH%**, Bitbucket Backup will find both)
+Please note that Bitbucket Backup assumes that you have the Mercurial and Git executables in your `%PATH%` variable.  
+(depending on the version, Git may come with a `git.exe` AND a `git.cmd` - it doesn't matter which one is in the `%PATH%`, Bitbucket Backup will find both)
 
 ## How to build
 
-To create a release build, just run **build.bat** or **build-setup.bat** in the main folder.  
+To create a release build, just run `build.bat` or `build-setup.bat` in the main folder.  
 
- - **build.bat** will create a new folder named **release\bin** with the compiled exe and all necessary files.
- - **build-setup.bat** will do the same, *and* create a **release\msi** folder with a MSI setup.  
+ - `build.bat` will create a new folder named `release\bin` with the compiled exe and all necessary files.
+ - `build-setup.bat` will do the same, *and* create a `release\msi` folder with a MSI setup.  
 
 Please note that [WiX](http://wix.codeplex.com/) needs to be installed on your machine in order to build the setup file. We are using WiX 3.5 at the moment, which you can download [here](http://wix.codeplex.com/releases/view/60102).  
-The build script assumes that the **bin** subfolder of the WiX installation folder is in your **%PATH%** variable.  
-For more information about how to build the setup, see the readme file in the **wix** subfolder.
+The build script assumes that the `bin` subfolder of the WiX installation folder is in your `%PATH%` variable.  
+For more information about how to build the setup, see the readme file in the `wix` subfolder.
 
 ### Acknowledgements
 
