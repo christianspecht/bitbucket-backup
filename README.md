@@ -13,8 +13,9 @@ For now, it works on my machine with Git 1.7.7 (but not on another machine with 
 
 ## Setup
 
-Bitbucket Backup loads all important values (your Bitbucket username and password, and the backup folder on your local machine) from a config file.  
-Before you run Bitbucket Backup the first time, you need to edit **BitbucketBackup.exe.config** and provide your data.  
+To install Bitbucket Backup on your machine, just run the setup.  
+When you run Bitbucket Backup the first time, it will ask you for your Bitbucket username and password, and for the backup folder (must be an existing folder on your local machine).  
+After that, Bitbucket Backup will run without user interaction, but you can re-enter your data any time by pressing **SPACE** on startup.
 
 Please note that Bitbucket Backup assumes that you have the Mercurial and Git executables in your **%PATH%** variable.  
 (depending on the version, Git may come with a **git.exe** AND a **git.cmd** - it doesn't matter which one is in the **%PATH%**, Bitbucket Backup will find both)
