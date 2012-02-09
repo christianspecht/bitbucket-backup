@@ -1,3 +1,5 @@
+![logo](https://bitbucket.org/christianspecht/bitbucket-backup/raw/tip/img/logo64x64.png)
+
 Bitbucket Backup is a backup tool which backups all your [Bitbucket](https://bitbucket.org/) repositories to your local machine.
 
 ## Links
