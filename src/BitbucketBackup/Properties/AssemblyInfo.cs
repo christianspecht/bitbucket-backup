@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Bitbucket Backup")]
 [assembly: AssemblyDescription("Backups all your Bitbucket repositories to your local machine.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("bitbucket.org/christianspecht/bitbucket-backup")]
+[assembly: AssemblyCompany("christianspecht.de/bitbucket-backup")]
 [assembly: AssemblyProduct("Bitbucket Backup")]
 [assembly: AssemblyCopyright("Copyright © Christian Specht 2011-2012")]
 [assembly: AssemblyTrademark("")]
