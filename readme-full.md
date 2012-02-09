@@ -1,6 +1,9 @@
-# Bitbucket Backup
-
 Bitbucket Backup is a backup tool which backups all your [Bitbucket](https://bitbucket.org/) repositories to your local machine.
+
+## Links
+
+- [Main Project page on Bitbucket](https://bitbucket.org/christianspecht/bitbucket-backup)
+- [Download page](https://bitbucket.org/christianspecht/bitbucket-backup/downloads)
 
 ## How does it work?
 
@@ -39,7 +42,7 @@ Bitbucket Backup makes use of the following open source projects:
  - [Mercurial.Net](http://mercurialnet.codeplex.com/)
  - [MSBuild Community Tasks](http://msbuildtasks.tigris.org/)
  - [WiX](http://wix.codeplex.com/)
- 
+
  The logo is based on a [floppy icon from Wikimedia Commons](http://commons.wikimedia.org/wiki/File%3aMedia-floppy.svg).
  
 ### License
