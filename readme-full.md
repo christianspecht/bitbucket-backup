@@ -2,10 +2,14 @@
 
 Bitbucket Backup is a backup tool which backups all your [Bitbucket](https://bitbucket.org/) repositories to your local machine.
 
+---
+
 ## Links
 
 - [Main Project page on Bitbucket](https://bitbucket.org/christianspecht/bitbucket-backup)
 - [Download page](https://bitbucket.org/christianspecht/bitbucket-backup/downloads)
+
+---
 
 ## How does it work?
 
@@ -16,6 +20,8 @@ It also checks for each repository, whether it has a wiki ([which is a repositor
 **DISCLAIMER: Git support is still very unstable.**  
 For now, it works on my machine with Git 1.7.7 (but not on another machine with Git v1.6.5.1, for example). It definitely needs improvement.
 
+---
+
 ## Setup
 
 To install Bitbucket Backup on your machine, just run the setup.  
@@ -24,6 +30,8 @@ After that, Bitbucket Backup will run without user interaction, but you can re-e
 
 Please note that Bitbucket Backup assumes that you have the Mercurial and Git executables in your `%PATH%` variable.  
 (depending on the version, Git may come with a `git.exe` AND a `git.cmd` - it doesn't matter which one is in the `%PATH%`, Bitbucket Backup will find both)
+
+---
 
 ## How to build
 
@@ -36,6 +44,8 @@ Please note that [WiX](http://wix.codeplex.com/) needs to be installed on your m
 The build script assumes that the `bin` subfolder of the WiX installation folder is in your `%PATH%` variable.  
 For more information about how to build the setup, see the readme file in the `wix` subfolder.
 
+---
+
 ### Acknowledgements
 
 Bitbucket Backup makes use of the following open source projects:
@@ -46,7 +56,9 @@ Bitbucket Backup makes use of the following open source projects:
  - [WiX](http://wix.codeplex.com/)
 
  The logo is based on a [floppy icon from Wikimedia Commons](http://commons.wikimedia.org/wiki/File%3aMedia-floppy.svg).
- 
+
+---
+
 ### License
 
 Bitbucket Backup is licensed under the MIT License. See [License.rtf](https://bitbucket.org/christianspecht/bitbucket-backup/raw/tip/License.rtf) for details.
