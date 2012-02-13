@@ -94,7 +94,37 @@ namespace BitbucketBackup
             this.UserName = Console.ReadLine();
 
             Console.WriteLine(Resources.InputPassword);
-            this.PassWord = Console.ReadLine();
+
+            string pw = string.Empty;
+            ConsoleKeyInfo key;
+
+            do
+            {
+                key = Console.ReadKey(true);
+
+                switch (key.Key)
+                {
+                    case ConsoleKey.Backspace:
+                        if (pw.Length > 0)
+                        {
+                            pw = pw.Substring(0, pw.Length - 1);
+                            Console.Write("\b \b");
+                        }
+                        break;
+
+                    case ConsoleKey.Enter:
+                        Console.WriteLine();
+                        break;
+
+                    default:
+                        pw += key.KeyChar;
+                        Console.Write("*");
+                        break;
+                }
+            }
+            while (key.Key != ConsoleKey.Enter);
+
+            this.PassWord = pw;
 
             Console.WriteLine(Resources.InputBackupFolder);
             this.BackupFolder = Console.ReadLine();
