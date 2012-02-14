@@ -43,6 +43,7 @@
 						Root='HKCU' Key='Software\$(var.ProductName)'
 						Type='string' Value='[INSTALLDIR]' KeyPath='yes'
 						/>
+						<Shortcut Id='ReadmeShortcut' Name='Readme' Target='[ARPREADME]' Directory='ProgramMenuDir' />
 					</Component>
 				</Directory>
 			</Directory>
@@ -67,9 +68,7 @@
 				<File Id='License' Name='License.rtf' DiskId='1' Source='release\bin\License.rtf' KeyPath='yes' />
 			</Component>
 			<Component Id='Readme' Guid='{B73CBD07-1FF2-4994-92C6-3B56068E01E3}'>
-				<File Id='Readme' Name='readme.txt' DiskId='1' Source='release\bin\README.md' KeyPath='yes'>
-					<Shortcut Id='ReadmeShortcut' Directory='ProgramMenuDir' Name='Readme' WorkingDirectory='INSTALLDIR' Advertise='yes' />
-				</File>
+				<File Id='Readme' Name='readme.txt' DiskId='1' Source='release\bin\README.md' KeyPath='yes' />
 			</Component>
 		</DirectoryRef>
 		
