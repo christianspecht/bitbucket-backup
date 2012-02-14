@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
 
-<?define ProductId = {2A579449-33D6-4962-B020-444684ECE30F} ?>
+<?define ProductId =  $(env.ProductId) ?>
 <?define UpgradeCode = {59B6F924-ECF4-40BD-A132-537FC1CC0695} ?>
 
 <?define ProductName = Bitbucket Backup ?>
