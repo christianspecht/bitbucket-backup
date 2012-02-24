@@ -41,8 +41,7 @@ To create a release build, just run `build.bat` or `build-setup.bat` in the main
  - `build-setup.bat` will do the same, *and* create a `release\msi` folder with a MSI setup.  
 
 Please note that [WiX](http://wix.codeplex.com/) needs to be installed on your machine in order to build the setup file. We are using WiX 3.5 at the moment, which you can download [here](http://wix.codeplex.com/releases/view/60102).  
-The build script assumes that the `bin` subfolder of the WiX installation folder is in your `%PATH%` variable.  
-For more information about how to build the setup, see the readme file in the `wix` subfolder.
+The build script assumes that the `bin` subfolder of the WiX installation folder is in your `%PATH%` variable.
 
 ---
 
