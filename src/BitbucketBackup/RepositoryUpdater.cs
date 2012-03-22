@@ -27,7 +27,7 @@ namespace BitbucketBackup
             this.localfolder = localFolder;
             this.config = config;
 
-            string uriWithAuth = repoUri.ToString().Replace("://", string.Format("://{0}:{1}@", config.UserName, config.PassWord));
+            string uriWithAuth = repoUri.ToString().Replace("://", string.Format("://{0}:{1}@", Uri.EscapeDataString(config.UserName), Uri.EscapeDataString(config.PassWord)));
             this.repouriwithauth = new Uri(uriWithAuth);
         }
 
