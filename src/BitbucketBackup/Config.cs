@@ -75,14 +75,11 @@ namespace BitbucketBackup
         /// <summary>
         /// Checks if the config is complete (if none of the settings is empty)
         /// </summary>
-        public bool IsComplete
+        public bool IsComplete()
         {
-            get
-            {
-                return this.UserName != string.Empty
-                    && this.PassWord != string.Empty
-                    && this.BackupFolder != string.Empty;
-            }
+            return this.UserName != string.Empty
+                && this.PassWord != string.Empty
+                && this.BackupFolder != string.Empty;
         }
 
         /// <summary>

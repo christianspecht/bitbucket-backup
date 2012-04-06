@@ -24,7 +24,7 @@ namespace BitbucketBackup
 
                 bool enterConfig = false;
 
-                if (config.IsComplete)
+                if (config.IsComplete())
                 {
                     Console.WriteLine(Resources.SettingsPrompt, waitInputSeconds);
                     Console.WriteLine();
@@ -45,7 +45,7 @@ namespace BitbucketBackup
                     }
                 }
 
-                if (enterConfig || !config.IsComplete)
+                if (enterConfig || !config.IsComplete())
                 {
                     config.Input();
                     Console.WriteLine();
