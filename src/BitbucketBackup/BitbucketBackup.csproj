@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyVersion.cs" />
+    <Compile Include="BitbucketBackup.cs" />
     <Compile Include="BitbucketRequest.cs" />
     <Compile Include="ClientException.cs" />
     <Compile Include="Config.cs" />
