@@ -49,7 +49,7 @@ namespace BitbucketBackup
         /// <returns>Uri with authentification</returns>
         private Uri BuildUriWithAuth(Uri uriWithoutAuth)
         {
-            return new Uri(uriWithoutAuth.ToString().Replace("://", string.Format("://{0}:{1}@", Uri.EscapeDataString(config.UserName), Uri.EscapeDataString(config.PassWord))));
+            return new Uri(uriWithoutAuth.ToString().Replace("://", string.Format("://{0}:{1}@", Uri.EscapeDataString(this.config.UserName), Uri.EscapeDataString(this.config.PassWord))));
         }
     }
 }

@@ -60,7 +60,7 @@ namespace BitbucketBackup
                     {
                         // if the Uri returns a 404, the username probably doesn't exist
                         // (there could be other reasons, but this one is the most likely)
-                        throw new ClientException(string.Format(Resources.InvalidUsername, config.UserName), ex);
+                        throw new ClientException(string.Format(Resources.InvalidUsername, this.config.UserName), ex);
                     }
                     else
                     {

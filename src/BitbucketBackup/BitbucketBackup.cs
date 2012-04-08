@@ -39,7 +39,7 @@ namespace BitbucketBackup
 
                 bool enterConfig = false;
 
-                if (config.IsComplete())
+                if (this.config.IsComplete())
                 {
                     Console.WriteLine(Resources.SettingsPrompt, waitInputSeconds);
                     Console.WriteLine();
@@ -60,19 +60,19 @@ namespace BitbucketBackup
                     }
                 }
 
-                if (enterConfig || !config.IsComplete())
+                if (enterConfig || !this.config.IsComplete())
                 {
-                    config.Input();
+                    this.config.Input();
                     Console.WriteLine();
                 }
 
-                Console.WriteLine(Resources.IntroUser, config.UserName);
-                Console.WriteLine(Resources.IntroFolder, config.BackupFolder);
+                Console.WriteLine(Resources.IntroUser, this.config.UserName);
+                Console.WriteLine(Resources.IntroFolder, this.config.BackupFolder);
                 Console.WriteLine();
                 Thread.Sleep(waitSeconds * 1000);
 
-                string resource = "users/" + config.UserName;
-                string response = request.Execute(resource);
+                string resource = "users/" + this.config.UserName;
+                string response = this.request.Execute(resource);
 
                 if (response == string.Empty)
                 {
@@ -96,21 +96,21 @@ namespace BitbucketBackup
                     from r in json["repositories"].Children()
                     select new { RepoName = (string)r["slug"], HasWiki = (bool)r["has_wiki"], Scm = (string)r["scm"] };
 
-                var baseUri = new Uri("https://bitbucket.org/" + config.UserName + "/");
+                var baseUri = new Uri("https://bitbucket.org/" + this.config.UserName + "/");
 
                 foreach (var repo in repos.OrderBy(r => r.RepoName))
                 {
                     var repoUri = new Uri(baseUri, repo.RepoName);
-                    string repoPath = Path.Combine(config.BackupFolder, repo.RepoName);
+                    string repoPath = Path.Combine(this.config.BackupFolder, repo.RepoName);
 
-                    updater.Update(repo.Scm, repoUri, repoPath);
+                    this.updater.Update(repo.Scm, repoUri, repoPath);
 
                     if (repo.HasWiki)
                     {
                         var wikiUri = new Uri(baseUri, repo.RepoName + "/wiki");
-                        string wikiPath = Path.Combine(config.BackupFolder, repo.RepoName + "-wiki");
+                        string wikiPath = Path.Combine(this.config.BackupFolder, repo.RepoName + "-wiki");
 
-                        updater.Update(repo.Scm, wikiUri, wikiPath);
+                        this.updater.Update(repo.Scm, wikiUri, wikiPath);
                     }
                 }
 
