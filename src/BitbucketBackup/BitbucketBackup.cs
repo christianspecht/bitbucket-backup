@@ -90,16 +90,15 @@ namespace BitbucketBackup
                     var repoUri = new Uri(baseUri, repo.RepoName);
                     string repoPath = Path.Combine(config.BackupFolder, repo.RepoName);
 
-                    var updater = new RepositoryUpdater(repo.Scm, repoUri, repoPath, config);
-                    updater.Update();
+                    var updater = new RepositoryUpdater(config);
+                    updater.Update(repo.Scm, repoUri, repoPath);
 
                     if (repo.HasWiki)
                     {
                         var wikiUri = new Uri(baseUri, repo.RepoName + "/wiki");
                         string wikiPath = Path.Combine(config.BackupFolder, repo.RepoName + "-wiki");
 
-                        var wikiUpdater = new RepositoryUpdater(repo.Scm, wikiUri, wikiPath, config);
-                        wikiUpdater.Update();
+                        updater.Update(repo.Scm, wikiUri, wikiPath);
                     }
                 }
 

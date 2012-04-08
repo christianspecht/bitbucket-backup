@@ -7,40 +7,32 @@ namespace BitbucketBackup
     /// </summary>
     internal class RepositoryUpdater
     {
-        private string repotype;
-        private Uri repouri;
-        private Uri repouriwithauth;
-        private string localfolder;
         private Config config;
 
         /// <summary>
         /// Creates a new RepositoryUpdater instance
         /// </summary>
-        /// <param name="repoType"
-        /// <param name="repoUri">URI to remote repository</param>
-        /// <param name="localFolder">local destination for repository clone</param>
         /// <param name="config">configuration settings</param>
-        public RepositoryUpdater(string repoType, Uri repoUri, string localFolder, Config config)
+        public RepositoryUpdater(Config config)
         {
-            this.repotype = repoType;
-            this.repouri = repoUri;
-            this.localfolder = localFolder;
             this.config = config;
-
-            string uriWithAuth = repoUri.ToString().Replace("://", string.Format("://{0}:{1}@", Uri.EscapeDataString(config.UserName), Uri.EscapeDataString(config.PassWord)));
-            this.repouriwithauth = new Uri(uriWithAuth);
         }
 
         /// <summary>
         /// Updates the local repository to the same revision as the remote one
         /// </summary>
-        public void Update()
+        /// <param name="repoType">type of the repository (hg or git)</param>
+        /// <param name="repoUri">URI to remote repository</param>
+        /// <param name="localFolder">local destination for repository clone</param>
+        public void Update(string repoType, Uri repoUri, string localFolder)
         {
-            var repo = RepositoryFactory.Create(this.repotype, this.repouriwithauth.ToString(), this.localfolder);
+            var uriWithAuth = this.BuildUriWithAuth(repoUri);
+
+            var repo = RepositoryFactory.Create(repoType, uriWithAuth.ToString(), localFolder);
             
             if (repo.PullingMessage.Contains("{0}"))
             {
-                Console.WriteLine(repo.PullingMessage, this.repouri);
+                Console.WriteLine(repo.PullingMessage, repoUri);
             }
             else
             {
@@ -48,6 +40,16 @@ namespace BitbucketBackup
             }
 
             repo.Pull();
+        }
+
+        /// <summary>
+        /// Inserts parameters for authentication into an URI
+        /// </summary>
+        /// <param name="uriWithoutAuth">Uri without authentification</param>
+        /// <returns>Uri with authentification</returns>
+        private Uri BuildUriWithAuth(Uri uriWithoutAuth)
+        {
+            return new Uri(uriWithoutAuth.ToString().Replace("://", string.Format("://{0}:{1}@", Uri.EscapeDataString(config.UserName), Uri.EscapeDataString(config.PassWord))));
         }
     }
 }
