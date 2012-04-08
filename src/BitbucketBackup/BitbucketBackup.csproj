@@ -40,6 +40,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\lib\Newtonsoft.Json\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\..\lib\Ninject\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -58,6 +61,12 @@
     <Compile Include="Config.cs" />
     <Compile Include="GitRepository.cs" />
     <Compile Include="GitWrapper.cs" />
+    <Compile Include="IBitbucketBackup.cs" />
+    <Compile Include="IBitbucketRequest.cs" />
+    <Compile Include="IConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IRepositoryUpdater.cs" />
     <Compile Include="MercurialRepository.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

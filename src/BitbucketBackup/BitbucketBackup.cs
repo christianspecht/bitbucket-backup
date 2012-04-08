@@ -8,8 +8,25 @@ using Newtonsoft.Json.Linq;
 
 namespace BitbucketBackup
 {
-    internal class BitbucketBackup
+    /// <summary>
+    /// main execution class
+    /// </summary>
+    internal class BitbucketBackup : IBitbucketBackup
     {
+        private IConfig config;
+        private IBitbucketRequest request;
+        private IRepositoryUpdater updater;
+
+        public BitbucketBackup(IConfig config, IBitbucketRequest request, IRepositoryUpdater updater)
+        {
+            this.config = config;
+            this.request = request;
+            this.updater = updater;
+        }
+
+        /// <summary>
+        /// execute backup
+        /// </summary>
         public void Execute()
         {
             int waitSeconds = 2;
@@ -17,8 +34,6 @@ namespace BitbucketBackup
 
             try
             {
-                var config = new Config();
-
                 Console.WriteLine(Resources.IntroHeadline, FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
                 Console.WriteLine();
 
@@ -56,8 +71,6 @@ namespace BitbucketBackup
                 Console.WriteLine();
                 Thread.Sleep(waitSeconds * 1000);
 
-                var request = new BitbucketRequest(config);
-
                 string resource = "users/" + config.UserName;
                 string response = request.Execute(resource);
 
@@ -90,7 +103,6 @@ namespace BitbucketBackup
                     var repoUri = new Uri(baseUri, repo.RepoName);
                     string repoPath = Path.Combine(config.BackupFolder, repo.RepoName);
 
-                    var updater = new RepositoryUpdater(config);
                     updater.Update(repo.Scm, repoUri, repoPath);
 
                     if (repo.HasWiki)

@@ -8,25 +8,25 @@ namespace BitbucketBackup
     /// <summary>
     /// Helper class for making requests to the Bitbucket API
     /// </summary>
-    internal class BitbucketRequest
+    internal class BitbucketRequest : IBitbucketRequest
     {
         /// <summary>
         /// Base URI for all API calls
         /// </summary>
         private Uri baseuri;
-
+        
         /// <summary>
         /// login credentials (Base64 encoded string)
         /// </summary>
         private string credentials;
 
-        private Config config;
+        private IConfig config;
 
         /// <summary>
         /// Creates a new Bitbucket API request.
         /// </summary>
         /// <param name="config">Config object (for login credentials)</param>
-        public BitbucketRequest(Config config)
+        public BitbucketRequest(IConfig config)
         {
             this.baseuri = new Uri("https://api.bitbucket.org/1.0/");
             this.credentials = Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(config.UserName + ":" + config.PassWord));

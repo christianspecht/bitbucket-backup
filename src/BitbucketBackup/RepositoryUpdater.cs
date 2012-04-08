@@ -5,15 +5,15 @@ namespace BitbucketBackup
     /// <summary>
     /// Clones or pulls/updates a given repository to the local disk.
     /// </summary>
-    internal class RepositoryUpdater
+    internal class RepositoryUpdater : IRepositoryUpdater
     {
-        private Config config;
+        private IConfig config;
 
         /// <summary>
         /// Creates a new RepositoryUpdater instance
         /// </summary>
         /// <param name="config">configuration settings</param>
-        public RepositoryUpdater(Config config)
+        public RepositoryUpdater(IConfig config)
         {
             this.config = config;
         }

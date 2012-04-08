@@ -7,7 +7,7 @@ namespace BitbucketBackup
     /// <summary>
     /// helper class for getting values out of the config file
     /// </summary>
-    internal class Config
+    internal class Config : IConfig
     {
         /// <summary>
         /// Bitbucket password
