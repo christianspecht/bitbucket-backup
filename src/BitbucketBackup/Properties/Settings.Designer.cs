@@ -58,5 +58,17 @@ namespace BitbucketBackup.Properties {
                 this["BackupFolder"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int PullTimeout {
+            get {
+                return ((int)(this["PullTimeout"]));
+            }
+            set {
+                this["PullTimeout"] = value;
+            }
+        }
     }
 }

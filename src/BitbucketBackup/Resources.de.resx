@@ -139,6 +139,13 @@ Bitte überprüfen Sie das Passwort!</value>
   <data name="InputPasswordInvalid" xml:space="preserve">
     <value>Sie haben kein Passwort eingegeben!</value>
   </data>
+  <data name="InputPullTimeout" xml:space="preserve">
+    <value>Timeout für Pulls, in Sekunden:
+(nur für Mercurial, optional, wird auf {0} gesetzt wenn nicht eingegeben)</value>
+  </data>
+  <data name="InputPullTimeoutInvalid" xml:space="preserve">
+    <value>Timeout für Pulls muß eine ganze Zahl größer als 0 sein!</value>
+  </data>
   <data name="InputUser" xml:space="preserve">
     <value>Ihr Bitbucket-Benutzername:</value>
   </data>

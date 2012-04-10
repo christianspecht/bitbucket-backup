@@ -22,6 +22,11 @@ namespace BitbucketBackup
         string BackupFolder { get; }
 
         /// <summary>
+        /// Timeout for pulling (only for Mercurial at the moment)
+        /// </summary>
+        int PullTimeout { get; }
+
+        /// <summary>
         /// Checks if the config is complete (if none of the settings is empty)
         /// </summary>
         bool IsComplete();

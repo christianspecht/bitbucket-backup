@@ -173,4 +173,11 @@ Please check if the password is valid!</value>
   <data name="InputUserInvalid" xml:space="preserve">
     <value>You didn't enter a username!</value>
   </data>
+  <data name="InputPullTimeout" xml:space="preserve">
+    <value>Timeout for pulling, in seconds:
+(Mercurial only, optional, will be set to {0} if omitted)</value>
+  </data>
+  <data name="InputPullTimeoutInvalid" xml:space="preserve">
+    <value>Timeout for pulling must be an integer value greater than zero!</value>
+  </data>
 </root>

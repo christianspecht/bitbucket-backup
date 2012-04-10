@@ -10,6 +10,11 @@ namespace BitbucketBackup
     internal class Config : IConfig
     {
         /// <summary>
+        /// default timeout for pulling
+        /// </summary>
+        const int DefaultPullTimeout = 60;
+
+        /// <summary>
         /// Bitbucket password
         /// </summary>
         public string PassWord
@@ -78,10 +83,49 @@ namespace BitbucketBackup
         }
 
         /// <summary>
+        /// Timeout for pulling (only for Mercurial at the moment)
+        /// </summary>
+        public int PullTimeout
+        {
+            get
+            {
+                return Settings.Default.PullTimeout;
+            }
+        }
+
+        /// <summary>
+        /// Timeout for pulling (setting only)
+        /// </summary>
+        /// <remarks>different property for saving, because input is a string, but needs to be saved as an int</remarks>
+        internal string PullTimeoutInternal
+        {
+            set
+            {
+                int timeout;
+
+                if (String.IsNullOrEmpty(value))
+                {
+                    timeout = DefaultPullTimeout;
+                }
+                else
+                {
+                    if (!int.TryParse(value, out timeout) || timeout < 1)
+                    {
+                        throw new ClientException(Resources.InputPullTimeoutInvalid, null);
+                    }
+                }
+
+                Settings.Default.PullTimeout = timeout;
+                Settings.Default.Save();
+            }
+        }
+
+        /// <summary>
         /// Checks if the config is complete (if none of the settings is empty)
         /// </summary>
         public bool IsComplete()
         {
+            // don't check PullTimeout because it's optional!
             return this.UserName != string.Empty
                 && this.PassWord != string.Empty
                 && this.BackupFolder != string.Empty;
@@ -95,6 +139,7 @@ namespace BitbucketBackup
             Console.WriteLine(Resources.InputUser);
             this.UserName = Console.ReadLine();
 
+            Console.WriteLine();
             Console.WriteLine(Resources.InputPassword);
 
             string pw = string.Empty;
@@ -128,8 +173,13 @@ namespace BitbucketBackup
 
             this.PassWord = pw;
 
+            Console.WriteLine();
             Console.WriteLine(Resources.InputBackupFolder);
             this.BackupFolder = Console.ReadLine();
+
+            Console.WriteLine();
+            Console.WriteLine(String.Format(Resources.InputPullTimeout, DefaultPullTimeout));
+            this.PullTimeoutInternal = Console.ReadLine();
         }
     }
 }

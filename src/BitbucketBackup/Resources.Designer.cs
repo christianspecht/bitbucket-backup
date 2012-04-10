@@ -125,6 +125,25 @@ namespace BitbucketBackup {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Timeout for pulling, in seconds:
+        ///(Mercurial only, optional, will be set to {0} if omitted) ähnelt.
+        /// </summary>
+        internal static string InputPullTimeout {
+            get {
+                return ResourceManager.GetString("InputPullTimeout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Timeout for pulling must be an integer value greater than zero! ähnelt.
+        /// </summary>
+        internal static string InputPullTimeoutInvalid {
+            get {
+                return ResourceManager.GetString("InputPullTimeoutInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Your Bitbucket username: ähnelt.
         /// </summary>
         internal static string InputUser {
