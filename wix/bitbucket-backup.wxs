@@ -64,6 +64,9 @@
 			<Component Id='JsonNet' Guid='{442734E0-3D34-4FB9-AD45-FC63C495835F}'>
 				<File Id='JsonNet' Name='Newtonsoft.Json.dll' DiskId='1' Source='release\bin\Newtonsoft.Json.dll' KeyPath='yes' />
 			</Component>
+			<Component Id='Ninject' Guid='{7958E7FB-5586-43AF-BAE2-5EF637A0E8A6}'>
+				<File Id='Ninject' Name='Ninject.dll' DiskId='1' Source='release\bin\Ninject.dll' KeyPath='yes' />
+			</Component>
 			<Component Id='License' Guid='{9DE17CBD-96F0-487E-A964-014337A62763}'>
 				<File Id='License' Name='License.rtf' DiskId='1' Source='release\bin\License.rtf' KeyPath='yes' />
 			</Component>
@@ -84,6 +87,7 @@
 			<ComponentRef Id='Config' />
 			<ComponentRef Id='MercurialNet' />
 			<ComponentRef Id='JsonNet' />
+			<ComponentRef Id='Ninject' />
 			<ComponentRef Id='License' />
 			<ComponentRef Id='Readme' />
 			<ComponentRef Id='ResDe' />
