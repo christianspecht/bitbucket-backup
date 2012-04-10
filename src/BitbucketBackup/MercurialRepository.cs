@@ -10,8 +10,12 @@ namespace BitbucketBackup
     internal class MercurialRepository : RepositoryBase
     {
         private Repository repo;
+        private IConfig config;
 
-        public MercurialRepository(string remoteUri, string folder) : base(remoteUri, folder) { }
+        public MercurialRepository(string remoteUri, string folder, IConfig config) : base(remoteUri, folder)
+        {
+            this.config = config;
+        }
 
         public override string PullingMessage
         {
@@ -35,7 +39,7 @@ namespace BitbucketBackup
                 throw new InvalidOperationException("You need to call Init() first!");
             }
 
-            this.repo.Pull(this.remoteuri, new PullCommand().WithUpdate(false));
+            this.repo.Pull(this.remoteuri, new PullCommand().WithUpdate(false).WithTimeout(this.config.PullTimeout));
         }
     }
 }

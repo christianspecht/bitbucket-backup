@@ -8,14 +8,16 @@ namespace BitbucketBackup
     internal class RepositoryUpdater : IRepositoryUpdater
     {
         private IConfig config;
+        private IRepositoryFactory factory;
 
         /// <summary>
         /// Creates a new RepositoryUpdater instance
         /// </summary>
         /// <param name="config">configuration settings</param>
-        public RepositoryUpdater(IConfig config)
+        public RepositoryUpdater(IConfig config, IRepositoryFactory factory)
         {
             this.config = config;
+            this.factory = factory;
         }
 
         /// <summary>
@@ -28,7 +30,7 @@ namespace BitbucketBackup
         {
             var uriWithAuth = this.BuildUriWithAuth(repoUri);
 
-            var repo = RepositoryFactory.Create(repoType, uriWithAuth.ToString(), localFolder);
+            var repo = this.factory.Create(repoType, uriWithAuth.ToString(), localFolder);
             
             if (repo.PullingMessage.Contains("{0}"))
             {

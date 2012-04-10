@@ -66,6 +66,8 @@
     <Compile Include="IConfig.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="IRepository.cs" />
+    <Compile Include="IRepositoryFactory.cs" />
     <Compile Include="IRepositoryUpdater.cs" />
     <Compile Include="MercurialRepository.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

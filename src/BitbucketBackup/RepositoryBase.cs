@@ -5,7 +5,7 @@ namespace BitbucketBackup
     /// <summary>
     /// Abstract base class for repository implementations
     /// </summary>
-    internal abstract class RepositoryBase
+    internal abstract class RepositoryBase : IRepository
     {
         protected string remoteuri;
         protected string folder;
