@@ -16,6 +16,11 @@ namespace BitbucketBackup
         {
             get
             {
+                if (String.IsNullOrEmpty(Settings.Default.PassWord))
+                {
+                    return Settings.Default.PassWord;
+                }
+
                 return StringEncryptor.Decrypt(Settings.Default.PassWord);
             }
             private set
