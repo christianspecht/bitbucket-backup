@@ -39,7 +39,20 @@ namespace BitbucketBackup
                 throw new InvalidOperationException("You need to call Init() first!");
             }
 
-            this.repo.Pull(this.remoteuri, new PullCommand().WithUpdate(false).WithTimeout(this.config.PullTimeout));
+            try
+            {
+                this.repo.Pull(this.remoteuri, new PullCommand().WithUpdate(false).WithTimeout(this.config.PullTimeout));
+            }
+            catch (MercurialException ex)
+            {
+                // catch only timeouts, re-throw everything else
+                if (ex.Message == "The executable did not complete within the allotted time")
+                {
+                    throw new ClientException(String.Format(Resources.PullTimeoutExceeded, this.config.PullTimeout), null);
+                }
+                
+                throw;
+            }
         }
     }
 }

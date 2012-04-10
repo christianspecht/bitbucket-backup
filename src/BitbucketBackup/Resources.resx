@@ -180,4 +180,7 @@ Please check if the password is valid!</value>
   <data name="InputPullTimeoutInvalid" xml:space="preserve">
     <value>Timeout for pulling must be an integer value greater than zero!</value>
   </data>
+  <data name="PullTimeoutExceeded" xml:space="preserve">
+    <value>Timeout for pulling exceeded! ({0} seconds) </value>
+  </data>
 </root>

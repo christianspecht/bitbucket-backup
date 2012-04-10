@@ -235,6 +235,15 @@ namespace BitbucketBackup {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Timeout for pulling exceeded! ({0} seconds)  ähnelt.
+        /// </summary>
+        internal static string PullTimeoutExceeded {
+            get {
+                return ResourceManager.GetString("PullTimeoutExceeded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Press &lt;SPACE&gt; in the next {0} seconds to re-enter your settings! ähnelt.
         /// </summary>
         internal static string SettingsPrompt {

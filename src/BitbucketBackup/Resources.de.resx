@@ -168,6 +168,9 @@ Bitte überprüfen Sie den Benutzernamen!</value>
   <data name="PressEnter" xml:space="preserve">
     <value>Drücken Sie &lt;ENTER&gt;, um das Programm zu beenden!</value>
   </data>
+  <data name="PullTimeoutExceeded" xml:space="preserve">
+    <value>Timeout für Pulls überschritten! ({0} Sekunden)</value>
+  </data>
   <data name="SettingsPrompt" xml:space="preserve">
     <value>Drücken Sie &lt;LEERTASTE&gt; in den nächsten {0} Sekunden,
 um Ihre Einstellungen zu ändern!</value>
