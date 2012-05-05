@@ -40,7 +40,7 @@ To create a release build, just run `build.bat` or `build-setup.bat` in the main
  - `build.bat` will create a new folder named `release\bin` with the compiled exe and all necessary files.
  - `build-setup.bat` will do the same, *and* create a `release\msi` folder with a MSI setup.  
 
-Please note that [WiX](http://wix.codeplex.com/) needs to be installed on your machine in order to build the setup file. We are using WiX 3.5 at the moment, which you can download [here](http://wix.codeplex.com/releases/view/60102).  
+Please note that [WiX](http://wixtoolset.org/) needs to be installed on your machine in order to build the setup file. We are using WiX 3.5 at the moment, which you can download [here](http://wix.codeplex.com/releases/view/60102).  
 The build script assumes that the `bin` subfolder of the WiX installation folder is in your `%PATH%` variable.
 
 ---
@@ -53,7 +53,7 @@ Bitbucket Backup makes use of the following open source projects:
  - [Mercurial.Net](http://mercurialnet.codeplex.com/)
  - [MSBuild Community Tasks](http://msbuildtasks.tigris.org/)
  - [Ninject](http://ninject.org/)
- - [WiX](http://wix.codeplex.com/)
+ - [WiX](http://wixtoolset.org/)
 
  The logo is based on a [floppy icon from Wikimedia Commons](http://commons.wikimedia.org/wiki/File%3aMedia-floppy.svg).
 
