@@ -24,6 +24,9 @@ For now, it works on my machine with Git 1.7.7 (but not on another machine with 
 
 ## Setup
 
+Bitbucket Backup is a Windows application and requires the .NET Framework 4.0 (Client Profile is enough, no need for the full framework).  
+You can download the .NET Framework 4 Client Profile [here](http://www.microsoft.com/en-us/download/details.aspx?id=17113).
+
 To install Bitbucket Backup on your machine, just run the setup.  
 When you run Bitbucket Backup the first time, it will ask you for your Bitbucket username and password, and for the backup folder (must be an existing folder on your local machine).  
 After that, Bitbucket Backup will run without user interaction, but you can re-enter your data any time by pressing **SPACE** on startup.
