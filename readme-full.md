@@ -54,7 +54,7 @@ Bitbucket Backup makes use of the following open source projects:
 
  - [Json.NET](http://json.codeplex.com/)
  - [Mercurial.Net](http://mercurialnet.codeplex.com/)
- - [MSBuild Community Tasks](http://msbuildtasks.tigris.org/)
+ - [MSBuild Community Tasks](https://github.com/loresoft/msbuildtasks)
  - [Ninject](http://ninject.org/)
  - [WiX](http://wixtoolset.org/)
 
