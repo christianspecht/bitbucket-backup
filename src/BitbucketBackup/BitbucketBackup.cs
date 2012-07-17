@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
-using Newtonsoft.Json.Linq;
 
 namespace BitbucketBackup
 {
@@ -16,12 +15,14 @@ namespace BitbucketBackup
         private IConfig config;
         private IBitbucketRequest request;
         private IRepositoryUpdater updater;
+        private IResponseParser parser;
 
-        public BitbucketBackup(IConfig config, IBitbucketRequest request, IRepositoryUpdater updater)
+        public BitbucketBackup(IConfig config, IBitbucketRequest request, IRepositoryUpdater updater, IResponseParser parser)
         {
             this.config = config;
             this.request = request;
             this.updater = updater;
+            this.parser = parser;
         }
 
         /// <summary>
@@ -83,18 +84,7 @@ namespace BitbucketBackup
                     return;
                 }
 
-                var json = JObject.Parse(response);
-
-                // If the authentication fails, the BB API returns only a subset of the repository information.
-                // One of the missing things is the "has_wiki" property. So if it's missing, the password is probably wrong
-                if (json.SelectToken("repositories[0].has_wiki") == null)
-                {                    
-                    throw new ClientException(Resources.AuthenticationFailed, null);
-                }
-
-                var repos =
-                    from r in json["repositories"].Children()
-                    select new { RepoName = (string)r["slug"], HasWiki = (bool)r["has_wiki"], Scm = (string)r["scm"] };
+                var repos = this.parser.Parse(response);
 
                 var baseUri = new Uri("https://bitbucket.org/" + this.config.UserName + "/");
 

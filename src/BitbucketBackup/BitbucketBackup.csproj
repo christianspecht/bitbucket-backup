@@ -57,6 +57,7 @@
     <Compile Include="AssemblyVersion.cs" />
     <Compile Include="BitbucketBackup.cs" />
     <Compile Include="BitbucketRequest.cs" />
+    <Compile Include="BitbucketRepository.cs" />
     <Compile Include="ClientException.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="GitRepository.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="IRepository.cs" />
     <Compile Include="IRepositoryFactory.cs" />
     <Compile Include="IRepositoryUpdater.cs" />
+    <Compile Include="IResponseParser.cs" />
     <Compile Include="MercurialRepository.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -90,6 +92,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ResponseParser.cs" />
     <Compile Include="StringEncryptor.cs" />
   </ItemGroup>
   <ItemGroup>
