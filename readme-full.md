@@ -6,8 +6,9 @@ Bitbucket Backup is a backup tool which backups all your [Bitbucket](https://bit
 
 ## Links
 
-- [Main Project page on Bitbucket](https://bitbucket.org/christianspecht/bitbucket-backup)
 - [Download page](https://bitbucket.org/christianspecht/bitbucket-backup/downloads)
+- [Found a bug?](https://bitbucket.org/christianspecht/bitbucket-backup/issues/new)
+- [Main Project page on Bitbucket](https://bitbucket.org/christianspecht/bitbucket-backup)
 
 ---
 
