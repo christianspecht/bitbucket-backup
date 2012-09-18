@@ -57,6 +57,7 @@ Bitbucket Backup makes use of the following open source projects:
  - [Mercurial.Net](http://mercurialnet.codeplex.com/)
  - [MSBuild Community Tasks](https://github.com/loresoft/msbuildtasks)
  - [Ninject](http://ninject.org/)
+ - [RestSharp](http://restsharp.org/)
  - [WiX](http://wixtoolset.org/)
 
  The logo is based on a [floppy icon from Wikimedia Commons](http://commons.wikimedia.org/wiki/File%3aMedia-floppy.svg).

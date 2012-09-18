@@ -1,7 +1,5 @@
-﻿using System;
-using System.IO;
-using System.Net;
-using System.Text;
+﻿using System.Net;
+using RestSharp;
 
 namespace BitbucketBackup
 {
@@ -11,9 +9,9 @@ namespace BitbucketBackup
     internal class BitbucketRequest : IBitbucketRequest
     {
         /// <summary>
-        /// Base URI for all API calls
+        /// Base URL for all API calls
         /// </summary>
-        private Uri baseuri;
+        private string baseurl;
 
         private IConfig config;
 
@@ -23,7 +21,7 @@ namespace BitbucketBackup
         /// <param name="config">Config object (for login credentials)</param>
         public BitbucketRequest(IConfig config)
         {
-            this.baseuri = new Uri("https://api.bitbucket.org/1.0/");
+            this.baseurl = "https://api.bitbucket.org/1.0/";
             this.config = config;
         }
 
@@ -34,44 +32,20 @@ namespace BitbucketBackup
         /// <returns>Response (as JSON string)</returns>
         public string Execute(string requestUri)
         {
+            var client = new RestClient(this.baseurl);
+            client.Authenticator = new HttpBasicAuthenticator(this.config.UserName, this.config.PassWord);
+            var request = new RestRequest(requestUri);
+            var response = client.Execute(request);
 
-            var uri = new Uri(baseuri, requestUri);
-            var request = WebRequest.Create(uri.ToString()) as HttpWebRequest;
-            request.Headers.Add("Authorization", "Basic " + this.GetCredentials());
-
-            try
+            switch (response.StatusCode)
             {
-                using (var response = request.GetResponse() as HttpWebResponse)
-                {
-                    var reader = new StreamReader(response.GetResponseStream());
-                    return reader.ReadToEnd();
-                }
+                case HttpStatusCode.NotFound:
+                    throw new ClientException(string.Format(Resources.InvalidUsername, this.config.UserName), null);
+                case HttpStatusCode.Unauthorized:
+                    throw new ClientException(Resources.AuthenticationFailed, null);
             }
-            catch (WebException ex)
-            {
-                using (HttpWebResponse resp = (HttpWebResponse)ex.Response)
-                {
-                    if (resp.StatusCode == HttpStatusCode.NotFound)
-                    {
-                        // if the Uri returns a 404, the username probably doesn't exist
-                        // (there could be other reasons, but this one is the most likely)
-                        throw new ClientException(string.Format(Resources.InvalidUsername, this.config.UserName), ex);
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-            }
-        }
 
-        /// <summary>
-        /// convert user name and password to credentials for request
-        /// </summary>
-        /// <returns>encrypted credentials</returns>
-        private string GetCredentials()
-        {
-            return Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(this.config.UserName + ":" + this.config.PassWord));
+            return response.Content;
         }
     }
 }
