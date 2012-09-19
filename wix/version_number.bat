@@ -4,7 +4,7 @@ rem Before releasing a new version, you must change BOTH values in this file as 
 
 rem Version Number:
 rem This number is used for both the setup AND the actual application. Just increase it.
-set VersionNumber=1.2.2
+set VersionNumber=1.2.3
 
 rem ProductId:
 rem Replace the GUID by a new one (important: with capital letters and curly braces!)
