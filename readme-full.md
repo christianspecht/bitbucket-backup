@@ -1,14 +1,14 @@
-![logo](https://bitbucket.org/christianspecht/bitbucket-backup/raw/tip/img/logo64x64.png)
+![logo](https://bitbucket.org/christianspecht/bitbucket-backup/raw/tip/img/logo128x128.png)
 
-Bitbucket Backup is a backup tool which backups all your [Bitbucket](https://bitbucket.org/) repositories to your local machine.
+Bitbucket Backup is a backup tool which clones/pulls all your [Bitbucket](https://bitbucket.org/) repositories to your local machine.
 
 ---
 
 ## Links
 
 - [Download page](https://bitbucket.org/christianspecht/bitbucket-backup/downloads)
-- [Found a bug?](https://bitbucket.org/christianspecht/bitbucket-backup/issues/new)
-- [Main Project page on Bitbucket](https://bitbucket.org/christianspecht/bitbucket-backup)
+- [Report a bug](https://bitbucket.org/christianspecht/bitbucket-backup/issues/new)
+- [Main project page on Bitbucket](https://bitbucket.org/christianspecht/bitbucket-backup)
 
 ---
 
@@ -67,3 +67,9 @@ Bitbucket Backup makes use of the following open source projects:
 ### License
 
 Bitbucket Backup is licensed under the MIT License. See [License.rtf](https://bitbucket.org/christianspecht/bitbucket-backup/raw/tip/License.rtf) for details.
+
+---
+
+### Project Info
+
+<script type="text/javascript" src="http://www.ohloh.net/p/585509/widgets/project_basic_stats.js"></script> <script type="text/javascript" src="http://www.ohloh.net/p/585509/widgets/project_languages.js"></script>
