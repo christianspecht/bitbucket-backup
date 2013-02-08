@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("christianspecht.de/bitbucket-backup")]
 [assembly: AssemblyProduct("Bitbucket Backup")]
-[assembly: AssemblyCopyright("Copyright © Christian Specht 2011-2012")]
+[assembly: AssemblyCopyright("Copyright © Christian Specht 2011-2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
