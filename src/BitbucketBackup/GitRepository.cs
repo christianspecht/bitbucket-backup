@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace BitbucketBackup
 {
@@ -28,7 +29,7 @@ namespace BitbucketBackup
 
         public override void Pull()
         {
-            this.git.Execute("fetch " + this.remoteuri + " refs/heads/*:refs/heads/*");
+            this.git.Execute(String.Format("fetch {0} refs/heads/*:refs/heads/* refs/tags/*:refs/tags/*", this.remoteuri));
         }
     }
 }

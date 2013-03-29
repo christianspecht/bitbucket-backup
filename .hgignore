@@ -9,3 +9,4 @@ release
 *.msi
 AssemblyVersion.cs
 Thumbs.db
+*.DotSettings

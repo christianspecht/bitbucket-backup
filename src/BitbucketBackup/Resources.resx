@@ -183,4 +183,10 @@ Please check if the password is valid!</value>
   <data name="PullTimeoutExceeded" xml:space="preserve">
     <value>Timeout for pulling exceeded! ({0} seconds) </value>
   </data>
+  <data name="InputTeam" xml:space="preserve">
+    <value>Your Bitbucket team name (leave blank for no team):</value>
+  </data>
+  <data name="IntroTeam" xml:space="preserve">
+    <value>Bitbucket team: {0}</value>
+  </data>
 </root>

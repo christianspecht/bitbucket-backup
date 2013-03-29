@@ -17,6 +17,16 @@ namespace BitbucketBackup
         string UserName { get; }
 
         /// <summary>
+        /// Bitbucket team name
+        /// </summary>
+        string TeamName { get; }
+
+        /// <summary>
+        /// Use team name rather than username for urls
+        /// </summary>
+        bool UseTeam();
+
+        /// <summary>
         /// Folder on local machine where backups are saved
         /// </summary>
         string BackupFolder { get; }

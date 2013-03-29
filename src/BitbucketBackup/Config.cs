@@ -62,6 +62,30 @@ namespace BitbucketBackup
         }
 
         /// <summary>
+        /// Bitbucket team name
+        /// </summary>
+        public string TeamName
+        {
+            get
+            {
+                return Settings.Default.TeamName;
+            }
+            private set
+            {
+                Settings.Default.TeamName = value;
+                Settings.Default.Save();
+            }
+        }
+
+        /// <summary>
+        /// Checks if the team name is set in the configuration
+        /// </summary>
+        public bool UseTeam()
+        {
+            return !String.IsNullOrEmpty(TeamName);
+        }
+
+        /// <summary>
         /// Folder on local machine where backups are saved
         /// </summary>
         public string BackupFolder
@@ -172,6 +196,10 @@ namespace BitbucketBackup
             while (key.Key != ConsoleKey.Enter);
 
             this.PassWord = pw;
+
+            Console.WriteLine();
+            Console.WriteLine(Resources.InputTeam);
+            this.TeamName = Console.ReadLine();
 
             Console.WriteLine();
             Console.WriteLine(Resources.InputBackupFolder);

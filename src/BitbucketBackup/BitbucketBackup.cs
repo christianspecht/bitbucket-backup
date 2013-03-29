@@ -68,11 +68,15 @@ namespace BitbucketBackup
                 }
 
                 Console.WriteLine(Resources.IntroUser, this.config.UserName);
+                if (this.config.UseTeam())
+                    Console.WriteLine(Resources.IntroTeam, this.config.TeamName);
                 Console.WriteLine(Resources.IntroFolder, this.config.BackupFolder);
                 Console.WriteLine();
                 Thread.Sleep(waitSeconds * 1000);
 
-                string resource = "users/" + this.config.UserName;
+                string user = this.config.UseTeam() ? this.config.TeamName : this.config.UserName;
+
+                string resource = String.Format("users/{0}", user);
                 string response = this.request.Execute(resource);
 
                 if (response == string.Empty)
@@ -86,7 +90,7 @@ namespace BitbucketBackup
 
                 var repos = this.parser.Parse(response);
 
-                var baseUri = new Uri("https://bitbucket.org/" + this.config.UserName + "/");
+                var baseUri = new Uri(String.Format("https://bitbucket.org/{0}/", user));
 
                 foreach (var repo in repos.OrderBy(r => r.RepoName))
                 {

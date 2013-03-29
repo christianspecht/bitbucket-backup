@@ -146,6 +146,9 @@ Bitte überprüfen Sie das Passwort!</value>
   <data name="InputPullTimeoutInvalid" xml:space="preserve">
     <value>Timeout für Pulls muß eine ganze Zahl größer als 0 sein!</value>
   </data>
+  <data name="InputTeam" xml:space="preserve">
+    <value>Ihr Bitbucket-Teamnamen:</value>
+  </data>
   <data name="InputUser" xml:space="preserve">
     <value>Ihr Bitbucket-Benutzername:</value>
   </data>
@@ -154,6 +157,9 @@ Bitte überprüfen Sie das Passwort!</value>
   </data>
   <data name="IntroFolder" xml:space="preserve">
     <value>Lokaler Backup-Ordner: {0}</value>
+  </data>
+  <data name="IntroTeam" xml:space="preserve">
+    <value>Bitbucket-Team: {0}</value>
   </data>
   <data name="IntroUser" xml:space="preserve">
     <value>Bitbucket-Benutzer: {0}</value>
