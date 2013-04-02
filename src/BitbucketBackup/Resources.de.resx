@@ -141,13 +141,14 @@ Bitte überprüfen Sie das Passwort!</value>
   </data>
   <data name="InputPullTimeout" xml:space="preserve">
     <value>Timeout für Pulls, in Sekunden:
-(nur für Mercurial, optional, &lt;ENTER&gt; drücken für Defaultwert [{0}])</value>
+(nur für Mercurial, leer lassen für Standardwert [{0}])</value>
   </data>
   <data name="InputPullTimeoutInvalid" xml:space="preserve">
     <value>Timeout für Pulls muß eine ganze Zahl größer als 0 sein!</value>
   </data>
   <data name="InputTeam" xml:space="preserve">
-    <value>Ihr Bitbucket-Teamnamen:</value>
+    <value>Ihr Bitbucket-Teamname:
+(leer lassen, um kein Team anzugeben)</value>
   </data>
   <data name="InputUser" xml:space="preserve">
     <value>Ihr Bitbucket-Benutzername:</value>
