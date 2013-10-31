@@ -10,3 +10,4 @@ release
 AssemblyVersion.cs
 Thumbs.db
 *.DotSettings
+packages
