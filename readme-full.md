@@ -81,7 +81,7 @@ Bitbucket Backup makes use of the following open source projects:
 
 ### Contributors
 
-- [Drew Peterson](https://bitbucket.org/waldo2k2)
+- [Drew Peterson](https://bitbucket.org/drewpeterson)
 - [Nassere Besseghir](https://bitbucket.org/nbesseghircsc)
 
 ---
