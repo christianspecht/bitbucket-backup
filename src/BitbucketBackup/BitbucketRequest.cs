@@ -21,7 +21,7 @@ namespace BitbucketBackup
         /// <param name="config">Config object (for login credentials)</param>
         public BitbucketRequest(IConfig config)
         {
-            this.baseurl = "https://api.bitbucket.org/1.0/";
+            this.baseurl = "https://bitbucket.org/api/1.0/";
             this.config = config;
         }
 
@@ -46,6 +46,7 @@ namespace BitbucketBackup
             }
 
             return response.Content;
+            
         }
     }
 }
