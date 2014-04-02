@@ -46,7 +46,6 @@ namespace BitbucketBackup
             }
 
             return response.Content;
-            
         }
     }
 }
