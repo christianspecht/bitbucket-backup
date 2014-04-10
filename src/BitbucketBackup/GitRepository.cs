@@ -29,7 +29,7 @@ namespace BitbucketBackup
 
         public override void Pull()
         {
-            this.git.Execute(String.Format("fetch {0} refs/heads/*:refs/heads/* refs/tags/*:refs/tags/*", this.remoteuri));
+            this.git.Execute(String.Format("fetch --force --prune {0} refs/heads/*:refs/heads/* refs/tags/*:refs/tags/*", this.remoteuri));
         }
     }
 }
