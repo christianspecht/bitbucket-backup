@@ -7,4 +7,4 @@ See [http://christianspecht.de/bitbucket-backup](http://christianspecht.de/bitbu
  
 ### License
 
-Bitbucket Backup is licensed under the MIT License. See [License.rtf](https://bitbucket.org/christianspecht/bitbucket-backup/raw/tip/License.rtf) for details.
+Bitbucket Backup is licensed under the [MIT License](http://christianspecht.de/bitbucket-backup/#license).

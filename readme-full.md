@@ -87,6 +87,7 @@ Bitbucket Backup makes use of the following open source projects:
 
 ---
 
+<div id="license">
 ### License
 
 Bitbucket Backup is licensed under the MIT License. See [License.rtf](https://bitbucket.org/christianspecht/bitbucket-backup/raw/tip/License.rtf) for details.
