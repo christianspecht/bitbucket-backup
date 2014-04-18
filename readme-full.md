@@ -33,6 +33,8 @@ Please note that Bitbucket Backup assumes that you have the Mercurial and Git ex
 (depending on the version, Git may come with a `git.exe` AND a `git.cmd` - it doesn't matter which one is in the `%PATH%`, Bitbucket Backup will find both)
 
 To install Bitbucket Backup on your machine, just run the setup.  
+If you want a "portable" version without installer, there's a .zip download with the binaries as well *(starting with version 1.3.2)*.
+
 When you run Bitbucket Backup the first time, it will ask you for:
 
 0. Your Bitbucket username and password  
