@@ -125,7 +125,10 @@
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
        -->
-  <Import Project="..\.build\MSBuild.Community.Tasks.Targets" />
+  <PropertyGroup>
+    <MSBuildCommunityTasksPath>..\.build</MSBuildCommunityTasksPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildCommunityTasksPath)\MSBuild.Community.Tasks.Targets" />
   <Target Name="BeforeBuild">
     <Time>
       <Output TaskParameter="Year" PropertyName="Year" />
