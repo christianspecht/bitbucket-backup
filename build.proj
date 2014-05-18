@@ -63,7 +63,7 @@
 
 	<!-- create zip file -->
 	<Target Name="Zip">
-		<CreateItem Include="$(ReleaseDir)\*.*" >
+		<CreateItem Include="$(ReleaseDir)\**\*.*" >
 			<Output ItemName="ZipFiles" TaskParameter="Include"/>
 		</CreateItem>
 		<Zip ZipFileName="$(MainReleaseDir)\zip\bitbucket-backup-$(VersionNumber).zip" WorkingDirectory="$(ReleaseDir)" Files="@(ZipFiles)" />
