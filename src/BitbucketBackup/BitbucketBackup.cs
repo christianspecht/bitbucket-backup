@@ -36,6 +36,7 @@ namespace BitbucketBackup
             try
             {
                 Console.WriteLine(Resources.IntroHeadline, FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
+                Console.WriteLine(Resources.WebLink);
                 Console.WriteLine();
 
                 bool enterConfig = false;

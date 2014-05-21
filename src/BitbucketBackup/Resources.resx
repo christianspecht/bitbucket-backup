@@ -189,4 +189,7 @@ Please check if the password is valid!</value>
   <data name="IntroTeam" xml:space="preserve">
     <value>Bitbucket team: {0}</value>
   </data>
+  <data name="WebLink" xml:space="preserve">
+    <value>http://christianspecht.de/bitbucket-backup/</value>
+  </data>
 </root>
