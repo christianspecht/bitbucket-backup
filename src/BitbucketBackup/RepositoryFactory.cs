@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace BitbucketBackup
 {
     internal class RepositoryFactory : IRepositoryFactory
@@ -24,7 +26,7 @@ namespace BitbucketBackup
                 case "hg":
                     return new MercurialRepository(remoteUri, localFolder, this.config);
                 case "git":
-                    return new GitRepository(remoteUri, localFolder);
+                    return new GitRepository(remoteUri, String.Format("{0}.git", localFolder));
                 default:
                     return null;
             }
