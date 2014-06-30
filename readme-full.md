@@ -54,6 +54,43 @@ After that, Bitbucket Backup will run without user interaction, but you can re-e
 
 ---
 
+<div id="restore"></div>
+## What is actually backed up and how do I restore from that backup?
+
+Bitbucket Backup creates local repositories and pulls from the remote Bitbucket repositories into the local ones.  
+Those local repositories are **bare repositories**, i.e. they don't contain a working directory.  
+
+When you look inside the repository directories, you'll see this:
+
+- **Mercurial**: A single folder named `.hg`
+- **Git**: Some folders (`objects`, `refs`, ...) and some files
+
+**Your complete history and your source code are in there - you just don't see the actual files.**  
+The repository is backed up without a working directory, because it's not necessary. All the data already exists inside the repository, a second copy of everything in the working directory would just be a waste of space.
+
+The easiest way to restore your working directory is to clone the bare repository that Bitbucket Backup created *(called `bare-repo` in the examples)*, which will create a clone **with** a working directory *(called `working-repo` in the examples)*:
+
+#### Mercurial:
+
+	hg clone bare-repo working-repo 
+
+It's also possible to create the working directory directly inside the bare repository:
+
+	cd bare-repo
+	hg update tip
+
+#### Git:
+
+	git clone bare-repo.git working-repo
+
+*(Note: It seems the Git tools do not like cloning from a bare repository that does not end in the `.git` extension, so Bitbucket Backup automatically appends it to all Git repositories)* 
+
+
+ 
+For more background information *(and the discussion that led to the creation of this section)* see [this issue](https://bitbucket.org/christianspecht/bitbucket-backup/issue/22).
+
+---
+
 ## Development
 
 #### How to build
