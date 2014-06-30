@@ -16,7 +16,7 @@ Bitbucket Backup is a backup tool which clones/pulls all your [Bitbucket](https:
 
 Bitbucket Backup uses the [Bitbucket API](https://api.bitbucket.org/) to get a list of all your repositories.  
 Then, it uses [Mercurial](http://mercurial.selenic.com/) and/or [Git](http://git-scm.com/) (which need to be installed on your machine if you have at least one repository of the given type) to clone every repository into your local backup folder (or just pull the newest changes if it already **is** in your local backup folder).  
-It also checks for each repository, whether it has a wiki ([which is a repository itself](http://confluence.atlassian.com/display/BITBUCKET/Using+a+bitbucket+Wiki)). If yes, that will be automatically cloned/pulled as well.
+It also checks for each repository, whether it has a wiki ([which is a repository itself](https://confluence.atlassian.com/display/BITBUCKET/Use+a+wiki)). If yes, that will be automatically cloned/pulled as well.
 
 ---
 
