@@ -8,19 +8,20 @@ namespace BitbucketBackup
     {
         private static void Main(string[] args)
         {
-            var emailAddress = String.Empty;
-
-            var p = new FluentCommandLineParser();
-            p.Setup<string>('e', "email")
-                .Callback(email => emailAddress = email);
-            p.Parse(args);
-
             using (var compositeLogger = new CompositeLogger())
             {
+                var p = new FluentCommandLineParser();
+                p.Setup<string>('e', "email")
+                    .Callback(delegate(string emailAddress)
+                    {
+                        if (!String.IsNullOrEmpty(emailAddress))
+                        {
+                            compositeLogger.AddLogger(new EmailLogger(emailAddress));
+                        }
+                    });
+                p.Parse(args);
+
                 compositeLogger.AddLogger(new ConsoleLogger());
-                
-                if (!String.IsNullOrEmpty(emailAddress))
-                    compositeLogger.AddLogger(new EmailLogger(emailAddress));
 
                 var kernel = new StandardKernel();
 
