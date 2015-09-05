@@ -54,6 +54,14 @@ After that, Bitbucket Backup will run without user interaction, but you can re-e
 
 ---
 
+## Emailing output
+
+To support the use case where Bitbucket Backup is scheduled to run as a service task, Bitbucket Backup provides an option that you may use to email the output. To take advantage of this, you will need to configure your SMTP settings in the application configuration file. Instructions on how to do this can be found on the [SMTP settings MSDN documentation page](https://msdn.microsoft.com/en-us/library/ms164240(v=vs.110).aspx).
+
+After the application configuration file is updated, run the application with the --email parameter specifying the email address to send the output to, e.g. `--email administrator@mycompany.com`.
+
+---
+
 <div id="restore"></div>
 ## What is actually backed up and how do I restore from that backup?
 

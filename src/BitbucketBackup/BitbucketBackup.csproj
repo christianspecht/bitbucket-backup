@@ -36,6 +36,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentCommandLineParser, Version=1.4.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentCommandLineParser.1.4.3\lib\net35-Client\FluentCommandLineParser.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Mercurial.Net, Version=1.1.1.607, Culture=neutral, PublicKeyToken=9e2fabf3af85dba9, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Mercurial.Net.1.1.1.607\lib\net35-Client\Mercurial.Net.dll</HintPath>
@@ -67,7 +71,10 @@
     <Compile Include="BitbucketRequest.cs" />
     <Compile Include="BitbucketRepository.cs" />
     <Compile Include="ClientException.cs" />
+    <Compile Include="CompositeLogger.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="ConsoleLogger.cs" />
+    <Compile Include="EmailLogger.cs" />
     <Compile Include="GitRepository.cs" />
     <Compile Include="GitWrapper.cs" />
     <Compile Include="IBitbucketBackup.cs" />
@@ -75,6 +82,7 @@
     <Compile Include="IConfig.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ILogger.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IRepositoryFactory.cs" />
     <Compile Include="IRepositoryUpdater.cs" />
