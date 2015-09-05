@@ -193,6 +193,6 @@ Please check if the password is valid!</value>
     <value>http://christianspecht.de/bitbucket-backup/</value>
   </data>
   <data name="EmailSubject" xml:space="preserve">
-    <value>BitBucketBackup Output: {0}</value>
+    <value>BitbucketBackup Output: {0}</value>
   </data>
 </root>

@@ -89,7 +89,7 @@ namespace BitbucketBackup {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to BitBucketBackup Output: {0}.
+        ///   Looks up a localized string similar to BitbucketBackup Output: {0}.
         /// </summary>
         internal static string EmailSubject {
             get {

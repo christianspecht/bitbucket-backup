@@ -128,7 +128,7 @@ Bitte überprüfen Sie das Passwort!</value>
     <value>Backup fehlgeschlagen!</value>
   </data>
   <data name="EmailSubject" xml:space="preserve">
-    <value>BitBucket Backup Ausgang: {0}</value>
+    <value>Bitbucket Backup Ausgang: {0}</value>
   </data>
   <data name="InputBackupFolder" xml:space="preserve">
     <value>Lokaler Backup-Ordner (muß schon existieren):</value>
