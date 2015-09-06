@@ -1,21 +1,40 @@
-﻿using Ninject;
+﻿using System;
+using Fclp;
+using Ninject;
 
 namespace BitbucketBackup
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            var kernel = new StandardKernel();
+            using (var compositeLogger = new CompositeLogger())
+            {
+                var p = new FluentCommandLineParser();
+                p.Setup<string>('e', "email")
+                    .Callback(delegate(string emailAddress)
+                    {
+                        if (!String.IsNullOrEmpty(emailAddress))
+                        {
+                            compositeLogger.AddLogger(new EmailLogger(emailAddress));
+                        }
+                    });
+                p.Parse(args);
 
-            kernel.Bind<IBitbucketBackup>().To<BitbucketBackup>();
-            kernel.Bind<IBitbucketRequest>().To<BitbucketRequest>();
-            kernel.Bind<IResponseParser>().To<ResponseParser>();
-            kernel.Bind<IRepositoryUpdater>().To<RepositoryUpdater>();
-            kernel.Bind<IRepositoryFactory>().To<RepositoryFactory>();
-            kernel.Bind<IConfig>().To<Config>().InSingletonScope();
+                compositeLogger.AddLogger(new ConsoleLogger());
 
-            kernel.Get<IBitbucketBackup>().Execute();
+                var kernel = new StandardKernel();
+
+                kernel.Bind<IBitbucketBackup>().To<BitbucketBackup>();
+                kernel.Bind<IBitbucketRequest>().To<BitbucketRequest>();
+                kernel.Bind<IResponseParser>().To<ResponseParser>();
+                kernel.Bind<IRepositoryUpdater>().To<RepositoryUpdater>();
+                kernel.Bind<IRepositoryFactory>().To<RepositoryFactory>();
+                kernel.Bind<IConfig>().To<Config>().InSingletonScope();
+                kernel.Bind<ILogger>().ToConstant(compositeLogger);
+
+                kernel.Get<IBitbucketBackup>().Execute();
+            }
         }
     }
 }

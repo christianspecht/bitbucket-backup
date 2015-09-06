@@ -89,6 +89,15 @@ namespace BitbucketBackup {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BitbucketBackup Output: {0}.
+        /// </summary>
+        internal static string EmailSubject {
+            get {
+                return ResourceManager.GetString("EmailSubject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Local backup folder (must already exist):.
         /// </summary>
         internal static string InputBackupFolder {

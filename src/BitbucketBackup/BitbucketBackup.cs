@@ -16,13 +16,15 @@ namespace BitbucketBackup
         private IBitbucketRequest request;
         private IRepositoryUpdater updater;
         private IResponseParser parser;
+        private readonly ILogger logger;
 
-        public BitbucketBackup(IConfig config, IBitbucketRequest request, IRepositoryUpdater updater, IResponseParser parser)
+        public BitbucketBackup(IConfig config, IBitbucketRequest request, IRepositoryUpdater updater, IResponseParser parser, ILogger logger)
         {
             this.config = config;
             this.request = request;
             this.updater = updater;
             this.parser = parser;
+            this.logger = logger;
         }
 
         /// <summary>
@@ -35,9 +37,9 @@ namespace BitbucketBackup
 
             try
             {
-                Console.WriteLine(Resources.IntroHeadline, FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
-                Console.WriteLine(Resources.WebLink);
-                Console.WriteLine();
+                logger.WriteLine(Resources.IntroHeadline, FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
+                logger.WriteLine(Resources.WebLink);
+                logger.WriteLine();
 
                 bool enterConfig = false;
 
@@ -68,11 +70,11 @@ namespace BitbucketBackup
                     Console.WriteLine();
                 }
 
-                Console.WriteLine(Resources.IntroUser, this.config.UserName);
+                logger.WriteLine(Resources.IntroUser, this.config.UserName);
                 if (this.config.UseTeam())
-                    Console.WriteLine(Resources.IntroTeam, this.config.TeamName);
-                Console.WriteLine(Resources.IntroFolder, this.config.BackupFolder);
-                Console.WriteLine();
+                    logger.WriteLine(Resources.IntroTeam, this.config.TeamName);
+                logger.WriteLine(Resources.IntroFolder, this.config.BackupFolder);
+                logger.WriteLine();
                 Thread.Sleep(waitSeconds * 1000);
 
                 string user = this.config.UseTeam() ? this.config.TeamName : this.config.UserName;
@@ -82,10 +84,8 @@ namespace BitbucketBackup
 
                 if (response == string.Empty)
                 {
-                    Console.WriteLine(Resources.NoResponse, resource);
-                    Console.WriteLine();
-                    Console.WriteLine(Resources.PressEnter);
-                    Console.ReadLine();
+                    logger.WriteLine(Resources.NoResponse, resource);
+                    logger.WriteLine();
                     return;
                 }
 
@@ -109,17 +109,16 @@ namespace BitbucketBackup
                     }
                 }
 
-                Console.WriteLine();
-                Console.WriteLine(Resources.BackupCompleted);
+                logger.WriteLine();
+                logger.WriteLine(Resources.BackupCompleted);
                 Thread.Sleep(waitSeconds * 1000);
             }
             catch (ClientException ex)
             {
-                Console.WriteLine(Resources.ClientExceptionHeadline);
-                Console.WriteLine(ex.Message);
-                Console.WriteLine();
-                Console.WriteLine(Resources.PressEnter);
-                Console.ReadLine();
+                logger.WriteLine(Resources.ClientExceptionHeadline);
+                logger.WriteLine(ex.Message);
+                logger.WriteLine();
+                logger.WriteLine(Resources.PressEnter);
             }
         }
     }

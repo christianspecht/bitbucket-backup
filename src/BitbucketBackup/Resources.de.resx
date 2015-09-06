@@ -127,6 +127,9 @@ Bitte überprüfen Sie das Passwort!</value>
   <data name="ClientExceptionHeadline" xml:space="preserve">
     <value>Backup fehlgeschlagen!</value>
   </data>
+  <data name="EmailSubject" xml:space="preserve">
+    <value>Bitbucket Backup Ausgang: {0}</value>
+  </data>
   <data name="InputBackupFolder" xml:space="preserve">
     <value>Lokaler Backup-Ordner (muß schon existieren):</value>
   </data>

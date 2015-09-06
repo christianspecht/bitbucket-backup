@@ -9,15 +9,17 @@ namespace BitbucketBackup
     {
         private IConfig config;
         private IRepositoryFactory factory;
+        private readonly ILogger logger;
 
         /// <summary>
         /// Creates a new RepositoryUpdater instance
         /// </summary>
         /// <param name="config">configuration settings</param>
-        public RepositoryUpdater(IConfig config, IRepositoryFactory factory)
+        public RepositoryUpdater(IConfig config, IRepositoryFactory factory, ILogger logger)
         {
             this.config = config;
             this.factory = factory;
+            this.logger = logger;
         }
 
         /// <summary>
@@ -34,11 +36,11 @@ namespace BitbucketBackup
             
             if (repo.PullingMessage.Contains("{0}"))
             {
-                Console.WriteLine(repo.PullingMessage, repoUri);
+                logger.WriteLine(repo.PullingMessage, repoUri);
             }
             else
             {
-                Console.WriteLine(repo.PullingMessage);
+                logger.WriteLine(repo.PullingMessage);
             }
 
             repo.Pull();
