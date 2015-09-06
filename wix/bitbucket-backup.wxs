@@ -58,6 +58,9 @@
 			<Component Id='Config' Guid='{66443E3E-5E8F-4224-8633-2209F00B9FBC}'>
 				<File Id='Config' Name='BitbucketBackup.exe.config' DiskId='1' Source='release\bin\BitbucketBackup.exe.config' KeyPath='yes' />
 			</Component>
+			<Component Id='FluentCommandLineParser' Guid='{4C488585-4F9F-44F0-A2AB-15851FB72020}'>
+				<File Id='FluentCommandLineParser' Name='FluentCommandLineParser.dll' DiskId='1' Source='release\bin\FluentCommandLineParser.dll' KeyPath='yes' />
+			</Component>
 			<Component Id='MercurialNet' Guid='{9FB139E7-F9EA-4DB5-BC9E-D4539D9A2EA2}'>
 				<File Id='MercurialNet' Name='Mercurial.Net.dll' DiskId='1' Source='release\bin\Mercurial.Net.dll' KeyPath='yes' />
 			</Component>
@@ -88,6 +91,7 @@
 			<ComponentRef Id='ProgramMenuDir' />
 			<ComponentRef Id='Exe' />
 			<ComponentRef Id='Config' />
+			<ComponentRef Id='FluentCommandLineParser' />
 			<ComponentRef Id='MercurialNet' />
 			<ComponentRef Id='JsonNet' />
 			<ComponentRef Id='Ninject' />
