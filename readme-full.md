@@ -116,6 +116,7 @@ To create a release build, just run `build.bat` or `build-setup.bat` in the main
 
 Bitbucket Backup makes use of the following open source projects:
 
+ - [Fluent Command Line Parser](http://fclp.github.io/fluent-command-line-parser/)
  - [Json.NET](http://json.codeplex.com/)
  - [Mercurial.Net](http://mercurialnet.codeplex.com/)
  - [MSBuild Community Tasks](https://github.com/loresoft/msbuildtasks)
@@ -131,7 +132,8 @@ Bitbucket Backup makes use of the following open source projects:
 ### Contributors
 
 - [Drew Peterson](https://bitbucket.org/drewpeterson)
-- [José Araujo](https://bitbucket.org/josea)
+- [Jose Araujo](https://bitbucket.org/josea)
+- [Matt Berther](http://matt.berther.io/)
 - [Nassere Besseghir](https://bitbucket.org/nbesseghircsc)
 
 ---
