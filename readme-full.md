@@ -147,5 +147,5 @@ Bitbucket Backup is licensed under the MIT License. See [License.rtf](https://bi
 
 ### Project Info
 
-<script type="text/javascript" src="http://www.ohloh.net/p/585509/widgets/project_basic_stats.js"></script>  
-<script type="text/javascript" src="http://www.ohloh.net/p/585509/widgets/project_languages.js"></script>
+<script type="text/javascript" src="https://www.ohloh.net/p/585509/widgets/project_basic_stats.js"></script>  
+<script type="text/javascript" src="https://www.ohloh.net/p/585509/widgets/project_languages.js"></script>
