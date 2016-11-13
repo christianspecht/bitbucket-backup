@@ -29,7 +29,12 @@ namespace BitbucketBackup
 
         public override void Pull()
         {
-            this.git.Execute(String.Format("fetch --force --prune {0} refs/heads/*:refs/heads/* refs/tags/*:refs/tags/*", this.remoteuri));
+            string output = this.git.Execute(String.Format("fetch --force --prune {0} refs/heads/*:refs/heads/* refs/tags/*:refs/tags/*", this.remoteuri));
+
+            if (output.Contains("Unauthorized") || output.Contains("Authentication failed"))
+            {
+                throw new ClientException(Resources.MissingPermissions, null);
+            }
         }
     }
 }

@@ -26,7 +26,8 @@ namespace BitbucketBackup
         /// Executes Git with the given command
         /// </summary>
         /// <param name="gitCommand">The command to execute, e.g. "init"</param>
-        public void Execute(string gitCommand)
+        /// <returns>Git's command line output</returns>
+        public string Execute(string gitCommand)
         {
             var info = new ProcessStartInfo();
             info.FileName = this.executable;
@@ -34,12 +35,19 @@ namespace BitbucketBackup
             info.CreateNoWindow = true;
             info.WorkingDirectory = this.folder;
             info.UseShellExecute = false;
+            info.RedirectStandardError = true;
+            info.RedirectStandardOutput = true;
 
             var git = new Process();
             git.StartInfo = info;
             git.Start();
+            string output = git.StandardOutput.ReadToEnd();
+            string error = git.StandardError.ReadToEnd();
+            
             git.WaitForExit();
             git.Close();      
+
+            return !string.IsNullOrEmpty(error) ? error : output;
         }
 
         /// <summary>
