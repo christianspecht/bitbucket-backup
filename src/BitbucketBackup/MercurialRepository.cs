@@ -45,12 +45,17 @@ namespace BitbucketBackup
             }
             catch (MercurialException ex)
             {
-                // catch only timeouts, re-throw everything else
+                // catch only certain errors, re-throw everything else
                 if (ex.Message == "The executable did not complete within the allotted time")
                 {
                     throw new ClientException(String.Format(Resources.PullTimeoutExceeded, this.config.PullTimeout), null);
                 }
-                
+
+                if (ex.Message.Contains("authorization failed"))
+                {
+                    throw new ClientException(Resources.MissingPermissions, null);
+                }
+
                 throw;
             }
         }
