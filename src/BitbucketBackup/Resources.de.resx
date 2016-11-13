@@ -172,6 +172,10 @@ Bitte überprüfen Sie das Passwort!</value>
     <value>Benutzerinfo konnte nicht geladen werden: {0}
 Bitte überprüfen Sie den Benutzernamen!</value>
   </data>
+  <data name="MissingPermissions" xml:space="preserve">
+    <value>Benötigte Berechtigungen fehlen.
+Bitte stellen Sie sicher, dass Sie ein App-Passwort mit ausreichenden Berechtigungen benutzen!</value>
+  </data>
   <data name="NoResponse" xml:space="preserve">
     <value>Die Bitbucket-API hat keine Antwort zurückgegeben: {0}</value>
   </data>

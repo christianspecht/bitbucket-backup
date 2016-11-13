@@ -226,6 +226,16 @@ namespace BitbucketBackup {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Required permissions are missing.
+        ///Please make sure your app password has enough permissions!.
+        /// </summary>
+        internal static string MissingPermissions {
+            get {
+                return ResourceManager.GetString("MissingPermissions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bitbucket API didn&apos;t return a response: {0}.
         /// </summary>
         internal static string NoResponse {

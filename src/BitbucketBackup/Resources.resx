@@ -195,4 +195,8 @@ Please check if the password is valid!</value>
   <data name="EmailSubject" xml:space="preserve">
     <value>Bitbucket Backup Output: {0}</value>
   </data>
+  <data name="MissingPermissions" xml:space="preserve">
+    <value>Required permissions are missing.
+Please make sure your app password has enough permissions!</value>
+  </data>
 </root>

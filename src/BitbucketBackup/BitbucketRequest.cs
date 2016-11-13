@@ -43,6 +43,8 @@ namespace BitbucketBackup
                     throw new ClientException(string.Format(Resources.InvalidUsername, this.config.UserName), null);
                 case HttpStatusCode.Unauthorized:
                     throw new ClientException(Resources.AuthenticationFailed, null);
+                case HttpStatusCode.Forbidden:
+                    throw new ClientException(Resources.MissingPermissions, null);
             }
 
             return response.Content;
