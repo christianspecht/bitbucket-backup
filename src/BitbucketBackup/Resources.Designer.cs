@@ -116,7 +116,7 @@ namespace BitbucketBackup {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your Bitbucket password:.
+        ///   Looks up a localized string similar to A Bitbucket app password (with proper permissions):.
         /// </summary>
         internal static string InputPassword {
             get {

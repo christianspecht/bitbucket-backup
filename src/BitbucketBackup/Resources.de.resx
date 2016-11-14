@@ -137,7 +137,7 @@ Bitte überprüfen Sie das Passwort!</value>
     <value>Sie haben keinen oder einen nicht existierenden Backup-Ordner eingegeben!</value>
   </data>
   <data name="InputPassword" xml:space="preserve">
-    <value>Ihr Bitbucket-Passwort:</value>
+    <value>Ein Bitbucket-App-Passwort (mit den richtigen Berechtigungen):</value>
   </data>
   <data name="InputPasswordInvalid" xml:space="preserve">
     <value>Sie haben kein Passwort eingegeben!</value>

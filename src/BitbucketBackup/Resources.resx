@@ -156,7 +156,7 @@ Please check if the password is valid!</value>
     <value>Local backup folder (must already exist):</value>
   </data>
   <data name="InputPassword" xml:space="preserve">
-    <value>Your Bitbucket password:</value>
+    <value>A Bitbucket app password (with proper permissions):</value>
   </data>
   <data name="InputUser" xml:space="preserve">
     <value>Your Bitbucket username:</value>
