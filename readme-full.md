@@ -37,7 +37,7 @@ If you want a "portable" version without installer, there's a .zip download with
 
 When you run Bitbucket Backup the first time, it will ask you for:
 
-0. Your Bitbucket username and password  
+0. Your Bitbucket username and **a previously created app password** *(see [next section](#app-password) for more info)*  
 *This user's repositories will be backed up.*
 
 0. Your Bitbucket team name (optional)  
@@ -51,6 +51,33 @@ The user is still needed for authentication.*
 *By default, Mercurial times out after 60 seconds. You may want to increase that value if you have large repositories or a slow connection.*
 
 After that, Bitbucket Backup will run without user interaction, but you can re-enter your data any time by pressing **SPACE** on startup.
+
+---
+
+<div id="app-password"></div>
+## Creating an app password
+
+Go into your Bitbucket account settings and [create an app password](https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html) for Bitbucket Backup. 
+
+You need to check the following permissions:
+
+- Account: Read
+- Repositories: Read
+- Wikis: Read and write
+ 
+![app password settings](https://bitbucket.org/christianspecht/bitbucket-backup/raw/tip/img/app-password.png)
+
+Bitbucket will then create a password for you. You must enter **this password** into Bitbucket Backup!
+
+#### *Background info for long-time users of Bitbucket Backup:*
+
+*In mid 2016, Atlassian/Bitbucket changed two things:*
+
+0. *They enabled a new feature: [app passwords](https://blog.bitbucket.org/2016/06/06/app-passwords-bitbucket-cloud/)*
+0. *They [auto-upgraded all Bitbucket accounts to Atlassian accounts](https://confluence.atlassian.com/bitbucket/upgrade-to-atlassian-account-829056056.html)*  
+
+*At the moment when you log into Bitbucket and change your Bitbucket account to an Atlassian account, your old Bitbucket password doesn't exist anymore. So Bitbucket Backup (which used the old password) stops working until you create an app password with the proper permissions, and use **that** in Bitbucket Backup.*
+
 
 ---
 
