@@ -57,23 +57,27 @@ namespace BitbucketBackup
         private string FindExecutable()
         {
             string pathVariable = Environment.GetEnvironmentVariable("path");
+            var invalidChars = Path.GetInvalidPathChars();
 
             foreach (var value in pathVariable.Split(';'))
             {
-                if (File.Exists(Path.Combine(value, "git.exe")))
+                if (value.IndexOfAny(invalidChars) == -1)
                 {
-                    return Path.Combine(value, "git.exe");
-                }
-
-                if (File.Exists(Path.Combine(value, "git.cmd")))
-                {
-                    // Calling git.cmd with Process.Start doesn't work, so we always need to use git.exe.
-                    // git.cmd is in a folder called "cmd", and git.exe is in a folder called "bin", which is on the same level as "cmd".
-                    var exePath = Path.Combine(Directory.GetParent(value).ToString(), "bin");
-
-                    if (File.Exists(Path.Combine(exePath, "git.exe")))
+                    if (File.Exists(Path.Combine(value, "git.exe")))
                     {
-                        return Path.Combine(exePath, "git.exe");
+                        return Path.Combine(value, "git.exe");
+                    }
+
+                    if (File.Exists(Path.Combine(value, "git.cmd")))
+                    {
+                        // Calling git.cmd with Process.Start doesn't work, so we always need to use git.exe.
+                        // git.cmd is in a folder called "cmd", and git.exe is in a folder called "bin", which is on the same level as "cmd".
+                        var exePath = Path.Combine(Directory.GetParent(value).ToString(), "bin");
+
+                        if (File.Exists(Path.Combine(exePath, "git.exe")))
+                        {
+                            return Path.Combine(exePath, "git.exe");
+                        }
                     }
                 }
             }
