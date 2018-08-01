@@ -2,6 +2,21 @@
 
 Bitbucket Backup is a backup tool which clones/pulls all your [Bitbucket](https://bitbucket.org/) repositories to your local machine.
 
+> ## Please note:
+> 
+> **Development of Bitbucket Backup has stopped, please use [SCM Backup](https://scm-backup.org/) instead.**
+> 
+> SCM Backup can do everything Bitbucket Backup can, plus:
+> 
+> - it supports more hosters (at the moment: GitHub, Bitbucket)
+> - it's able to backup multiple users/teams per hoster
+> - specific repositories can be excluded from backup
+> 
+> For more information, please read:
+> 
+> - [Documentation how to use SCM Backup (for users of Bitbucket Backup)](http://docs.scm-backup.org/en/latest/bitbucket-backup-users/)
+> - [Why Bitbucket Backup was retired](https://christianspecht.de/2018/08/01/goodbye-bitbucket-backup-hello-scm-backup/)
+
 ---
 
 ## Links
