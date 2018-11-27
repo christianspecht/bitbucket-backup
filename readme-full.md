@@ -16,6 +16,8 @@ Bitbucket Backup is a backup tool which clones/pulls all your [Bitbucket](https:
 > 
 > - [Documentation how to use SCM Backup (for users of Bitbucket Backup)](http://docs.scm-backup.org/en/latest/bitbucket-backup-users/)
 > - [Why Bitbucket Backup was retired](https://christianspecht.de/2018/08/01/goodbye-bitbucket-backup-hello-scm-backup/)
+>
+> **Plus, version 1 of the Bitbucket API (which Bitbucket Backup uses) is deprecated and will be removed on April 12, 2019 ([read the announcement here](https://developer.atlassian.com/cloud/bitbucket/deprecation-notice-v1-apis/)), which means that Bitbucket Backup will stop working on April 12, 2019.**
 
 ---
 
