@@ -1,0 +1,13 @@
+syntax: glob
+bin
+obj
+*.suo
+*.user
+release
+*.wixobj
+*.wixpdb
+*.msi
+AssemblyVersion.cs
+Thumbs.db
+*.DotSettings
+packages

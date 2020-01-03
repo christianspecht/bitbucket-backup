@@ -6,9 +6,9 @@ Bitbucket Backup is a backup tool which backups all your [Bitbucket](https://bit
 > 
 > **Development of Bitbucket Backup has stopped, please use [SCM Backup](https://scm-backup.org/) instead.**
 >
-> See [http://christianspecht.de/bitbucket-backup](http://christianspecht.de/bitbucket-backup) for more information.
+> See [https://christianspecht.de/bitbucket-backup](https://christianspecht.de/bitbucket-backup) for more information.
 
  
 ### License
 
-Bitbucket Backup is licensed under the [MIT License](http://christianspecht.de/bitbucket-backup/#license).
+Bitbucket Backup is licensed under the [MIT License](https://christianspecht.de/bitbucket-backup/#license).

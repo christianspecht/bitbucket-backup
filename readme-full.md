@@ -1,4 +1,4 @@
-![logo](https://bitbucket.org/christianspecht/bitbucket-backup/raw/tip/img/logo128x128.png)
+![logo](https://raw.githubusercontent.com/christianspecht/bitbucket-backup/master/img/logo128x128.png)
 
 Bitbucket Backup is a backup tool which clones/pulls all your [Bitbucket](https://bitbucket.org/) repositories to your local machine.
 
@@ -14,7 +14,7 @@ Bitbucket Backup is a backup tool which clones/pulls all your [Bitbucket](https:
 > 
 > For more information, please read:
 > 
-> - [Documentation how to use SCM Backup (for users of Bitbucket Backup)](http://docs.scm-backup.org/en/latest/bitbucket-backup-users/)
+> - [Documentation how to use SCM Backup (for users of Bitbucket Backup)](https://docs.scm-backup.org/en/latest/bitbucket-backup-users/)
 > - [Why Bitbucket Backup was retired](https://christianspecht.de/2018/08/01/goodbye-bitbucket-backup-hello-scm-backup/)
 >
 > **Plus, version 1 of the Bitbucket API (which Bitbucket Backup uses) is deprecated and will be removed on April 12, 2019 ([read the announcement here](https://developer.atlassian.com/cloud/bitbucket/deprecation-notice-v1-apis/)), which means that Bitbucket Backup will stop working on April 12, 2019.**
@@ -23,9 +23,9 @@ Bitbucket Backup is a backup tool which clones/pulls all your [Bitbucket](https:
 
 ## Links
 
-- [Download page](https://bitbucket.org/christianspecht/bitbucket-backup/downloads)
-- [Report a bug](https://bitbucket.org/christianspecht/bitbucket-backup/issues/new)
-- [Main project page on Bitbucket](https://bitbucket.org/christianspecht/bitbucket-backup)
+- [Download page](https://github.com/christianspecht/bitbucket-backup/releases)
+- [Report a bug](https://github.com/christianspecht/bitbucket-backup/issues/new)
+- [Main project page on GitHub](https://github.com/christianspecht/bitbucket-backup)
 
 ---
 
@@ -139,7 +139,7 @@ It's also possible to create the working directory directly inside the bare repo
 
 
  
-For more background information *(and the discussion that led to the creation of this section)* see [this issue](https://bitbucket.org/christianspecht/bitbucket-backup/issue/22).
+For more background information *(and the discussion that led to the creation of this section)* see [this issue](https://github.com/christianspecht/bitbucket-backup/issues/22).
 
 ---
 
@@ -185,11 +185,11 @@ Bitbucket Backup makes use of the following open source projects:
 <div id="license"></div>
 ### License
 
-Bitbucket Backup is licensed under the MIT License. See [License.rtf](https://bitbucket.org/christianspecht/bitbucket-backup/raw/tip/License.rtf) for details.
+Bitbucket Backup is licensed under the MIT License. See [License.rtf](https://github.com/christianspecht/bitbucket-backup/raw/master/License.rtf) for details.
 
 ---
 
 ### Project Info
 
-<script type="text/javascript" src="https://www.ohloh.net/p/585509/widgets/project_basic_stats.js"></script>  
-<script type="text/javascript" src="https://www.ohloh.net/p/585509/widgets/project_languages.js"></script>
+<script type='text/javascript' src='https://www.openhub.net/p/bitbucket-backup/widgets/project_basic_stats?format=js'></script>
+<script type='text/javascript' src='https://www.openhub.net/p/bitbucket-backup/widgets/project_languages?format=js'></script>

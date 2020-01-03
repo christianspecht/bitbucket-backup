@@ -105,10 +105,10 @@
 			DowngradeErrorMessage='A later version of [ProductName] is already installed. Setup will now exit.' />
 		
 		<Property Id='ARPCOMMENTS'>$(var.Description)</Property>
-		<Property Id='ARPHELPLINK'>http://christianspecht.de/bitbucket-backup</Property>
-		<Property Id='ARPREADME'>http://christianspecht.de/bitbucket-backup</Property>
-		<Property Id='ARPURLINFOABOUT'>http://christianspecht.de/</Property>
-		<Property Id='ARPURLUPDATEINFO'>http://christianspecht.de/bitbucket-backup</Property>
+		<Property Id='ARPHELPLINK'>https://christianspecht.de/bitbucket-backup</Property>
+		<Property Id='ARPREADME'>https://christianspecht.de/bitbucket-backup</Property>
+		<Property Id='ARPURLINFOABOUT'>https://christianspecht.de/</Property>
+		<Property Id='ARPURLUPDATEINFO'>https://christianspecht.de/bitbucket-backup</Property>
 		<Property Id='ARPPRODUCTICON'>logo.ico</Property>
 		<Property Id='WIXUI_INSTALLDIR' Value='INSTALLDIR' />
 		<WixVariable Id='WixUILicenseRtf' Value='License.rtf' />
