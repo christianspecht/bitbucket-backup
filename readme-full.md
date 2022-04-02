@@ -82,7 +82,7 @@ You need to check the following permissions:
 - Repositories: Read
 - Wikis: Read and write
  
-![app password settings](https://bitbucket.org/christianspecht/bitbucket-backup/raw/tip/img/app-password.png)
+![app password settings](https://raw.githubusercontent.com/christianspecht/bitbucket-backup/master/img/app-password.png)
 
 Bitbucket will then create a password for you. You must enter **this password** into Bitbucket Backup!
 
